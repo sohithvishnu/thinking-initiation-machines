@@ -1,0 +1,73 @@
+[
+  {
+    "file": "humaneval_Qwen_Qwen3-1.7B-sanitized.eval_results.json",
+    "total_tasks": 164,
+    "pass@1_base": 0.5609756097560976,
+    "pass@1_plus": 0.5182926829268293,
+    "base_pass": 92,
+    "base_fail": 72,
+    "plus_pass": 86,
+    "plus_fail": 78,
+    "fragile_count": 7,
+    "fragile_task_ids": [
+      "HumanEval/22",
+      "HumanEval/72",
+      "HumanEval/76",
+      "HumanEval/97",
+      "HumanEval/124",
+      "HumanEval/154",
+      "HumanEval/39"
+    ],
+    "date": "fe585eb4",
+    "model_name": "Qwen/Qwen3-1.7B-sanitized.eval_results"
+  },
+  {
+    "file": "humaneval_Qwen_Qwen3-4B-sanitized.eval_results.json",
+    "total_tasks": 164,
+    "pass@1_base": 0.7804878048780488,
+    "pass@1_plus": 0.7073170731707317,
+    "base_pass": 128,
+    "base_fail": 36,
+    "plus_pass": 117,
+    "plus_fail": 47,
+    "fragile_count": 12,
+    "fragile_task_ids": [
+      "HumanEval/22",
+      "HumanEval/75",
+      "HumanEval/76",
+      "HumanEval/86",
+      "HumanEval/97",
+      "HumanEval/109",
+      "HumanEval/122",
+      "HumanEval/141",
+      "HumanEval/151",
+      "HumanEval/154",
+      "HumanEval/39",
+      "HumanEval/55"
+    ],
+    "date": "fe585eb4",
+    "model_name": "Qwen/Qwen3-4B-sanitized.eval_results"
+  },
+  {
+    "file": "humaneval_Qwen_Qwen3-8B-sanitized.eval_results.json",
+    "total_tasks": 164,
+    "pass@1_base": 0.8475609756097561,
+    "pass@1_plus": 0.8048780487804879,
+    "base_pass": 139,
+    "base_fail": 25,
+    "plus_pass": 132,
+    "plus_fail": 32,
+    "fragile_count": 7,
+    "fragile_task_ids": [
+      "HumanEval/22",
+      "HumanEval/89",
+      "HumanEval/97",
+      "HumanEval/124",
+      "HumanEval/154",
+      "HumanEval/49",
+      "HumanEval/39"
+    ],
+    "date": "fe585eb4",
+    "model_name": "Qwen/Qwen3-8B-sanitized.eval_results"
+  }
+]

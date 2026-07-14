@@ -1,0 +1,6 @@
+{
+  "model_id": "Qwen/Qwen3-4B",
+  "sample_file": "/home/sohithvishnu/Desktop/tim/logs/evalplus_baseline/humaneval_Qwen_Qwen3-4B.jsonl",
+  "pass@1_base": 0.78,
+  "pass@1_base_plus_extra": 0.707
+}
