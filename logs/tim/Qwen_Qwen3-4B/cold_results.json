@@ -1,0 +1,6 @@
+{
+  "condition": "cold",
+  "sample_file": "/home/sohithvishnu/Desktop/tim/logs/tim/Qwen_Qwen3-4B/cold.jsonl",
+  "pass@1_base": 0.78,
+  "pass@1_base_plus_extra": 0.707
+}

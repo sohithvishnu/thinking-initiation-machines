@@ -1,3 +1,5 @@
-models
+experiment-2/models
+models/
 __pycache__
 .env
+.idea/

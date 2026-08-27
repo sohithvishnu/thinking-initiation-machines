@@ -1,0 +1,6 @@
+{
+  "condition": "tim_random_seed1",
+  "sample_file": "/home/sohithvishnu/Desktop/tim/logs/tim/Qwen_Qwen3-4B/tim_random_seed1.jsonl",
+  "pass@1_base": 0.805,
+  "pass@1_base_plus_extra": 0.756
+}

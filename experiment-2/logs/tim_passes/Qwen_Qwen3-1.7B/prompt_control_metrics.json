@@ -1,0 +1,45 @@
+{
+  "condition": "prompt_control",
+  "n_tasks": 164,
+  "prime_ms": 0.0,
+  "prime_per_pass_ms": [],
+  "prime_cache_len_per_pass": [],
+  "primed_cache_len": 0,
+  "generate_ms": {
+    "mean": 1131.2941044816898,
+    "median": 895.1577829998314,
+    "stdev": 927.5398893144,
+    "min": 196.53051200020855,
+    "max": 7442.734668000412
+  },
+  "deepcopy_ms": {
+    "mean": 0.0,
+    "median": 0.0,
+    "stdev": 0.0,
+    "min": 0.0,
+    "max": 0.0
+  },
+  "new_tokens": {
+    "mean": 88.28048780487805,
+    "median": 69.5,
+    "stdev": 71.96955223247213,
+    "min": 15,
+    "max": 573
+  },
+  "prompt_tokens": {
+    "mean": 186.21951219512195,
+    "median": 170.0,
+    "stdev": 65.15685097539888,
+    "min": 90,
+    "max": 443
+  },
+  "total_new_tokens": 14478,
+  "tokens_per_sec": 78.03495789039259,
+  "per_task_ms_mean": 1131.2941044816896,
+  "amortized_total_ms": 185532.2331349971,
+  "amortized_per_task_ms": 1131.2941044816896,
+  "wall_ms": 185631.0601409996,
+  "peak_memory_mb": 3393.3759765625,
+  "pass@1_base": 0.604,
+  "pass@1_base_plus_extra": 0.555
+}

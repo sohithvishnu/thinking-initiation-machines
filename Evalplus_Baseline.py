@@ -13,6 +13,13 @@ from tqdm import tqdm
 from config import qwen_models
 from utils import download_model, model_path_for
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+hf_token = os.environ["hf_token"]
+
 
 ROOT_DIR = Path(__file__).resolve().parent
 LOGS_DIR = ROOT_DIR / "logs" / "evalplus_baseline"
@@ -71,7 +78,7 @@ def load_model(model_id: str):
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    device_map = "auto" if torch.cuda.is_available() else None
+    device_map = "sequential" if torch.cuda.is_available() else None
     model = AutoModelForCausalLM.from_pretrained(
         model_dir,
         local_files_only=True,
@@ -145,7 +152,7 @@ def sanitize_samples(sample_file: Path) -> Path:
     print(result.stdout)
     if result.returncode != 0:
         print(f"WARNING: sanitize step failed, evaluating raw samples instead.\n{result.stderr}")
-        return sample_file
+    
 
     sanitized_path = sample_file.with_name(sample_file.stem + "-sanitized.jsonl")
     return sanitized_path if sanitized_path.exists() else sample_file
@@ -179,10 +186,8 @@ def evaluate_with_evalplus(sample_file: Path, dataset: str = "humaneval") -> dic
     return scores
 
 
-def run_humaneval(
-    model_id: str, num_samples_per_task: int,
-    max_new_tokens: int, temperature: float, top_p: float, do_sample: bool,
-):
+def run_humaneval(model_id: str, num_samples_per_task: int, max_new_tokens: int, temperature: float, top_p: float, do_sample: bool, output_dir: Path):
+    output_dir.mkdir(parents=True, exist_ok=True)
     problems = get_human_eval_plus()
     model, tokenizer, device = load_model(model_id)
 
@@ -207,7 +212,7 @@ def run_humaneval(
     unload_model(model)
 
     safe_model_name = model_id.replace("/", "_")
-    sample_file = LOGS_DIR / f"humaneval_{safe_model_name}.jsonl"
+    sample_file = output_dir / f"Evalplus_{safe_model_name}.jsonl"
     write_jsonl(str(sample_file), samples)
     print(f"Wrote {len(samples)} samples to {sample_file}")
 
@@ -215,7 +220,7 @@ def run_humaneval(
     scores = evaluate_with_evalplus(sanitized_file, dataset="humaneval")
 
     result_record = {"model_id": model_id, "sample_file": str(sample_file), **scores}
-    results_log = LOGS_DIR / f"humaneval_{safe_model_name}_evalplus_results.json"
+    results_log = output_dir / f"Evalplus_{safe_model_name}_results.json"
     with open(results_log, "w") as f:
         json.dump(result_record, f, indent=2)
 
@@ -224,23 +229,28 @@ def run_humaneval(
 
 
 def main():
-    all_results = {}
-    for model_id in tqdm(qwen_models, desc="Models", unit="model"):
-        print(f"Running HumanEval+ for model: {model_id}")
-        all_results[model_id] = run_humaneval(
-            model_id=model_id,
-            num_samples_per_task=1,
-            max_new_tokens=768,
-            temperature=0.0,
-            top_p=1.0,
-            do_sample=False,
-        )
+    total_models = len(qwen_models)
+    total_rounds = 3
+    for i in range(1,total_rounds+1):
+        output_dir = LOGS_DIR / f"humaneval_{i}"
+        all_results = {}
+        for m, model_id in enumerate(tqdm(qwen_models, desc="Models", unit="model")):
+            print(f"Running HumanEval+ for model: {model_id}")
+            all_results[model_id] = run_humaneval(
+                model_id=model_id,
+                num_samples_per_task=1,
+                max_new_tokens=768,
+                temperature=0.0,
+                top_p=1.0,
+                do_sample=False,
+                output_dir=output_dir
+            )
 
     
-    print("Summary (pass@1_base = original HumanEval, pass@1_base_plus_extra = HumanEval+)")
+        print("Summary (pass@1_base = original HumanEval, pass@1_base_plus_extra = HumanEval+)")
     
-    for model_id, scores in all_results.items():
-        print(f"  {model_id}: {scores}")
+        for model_id, scores in all_results.items():
+            print(f"  {model_id}: {scores}")
 
 
 if __name__ == "__main__":

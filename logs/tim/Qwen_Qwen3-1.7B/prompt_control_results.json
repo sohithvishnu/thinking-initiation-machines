@@ -1,0 +1,6 @@
+{
+  "condition": "prompt_control",
+  "sample_file": "/home/sohithvishnu/Desktop/tim/logs/tim/Qwen_Qwen3-1.7B/prompt_control.jsonl",
+  "pass@1_base": 0.604,
+  "pass@1_base_plus_extra": 0.555
+}

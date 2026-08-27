@@ -1,0 +1,49 @@
+{
+  "condition": "tim_domain_p1_seed0",
+  "n_tasks": 164,
+  "prime_ms": 15.130404000046838,
+  "prime_per_pass_ms": [
+    15.130404000046838
+  ],
+  "prime_cache_len_per_pass": [
+    64
+  ],
+  "primed_cache_len": 64,
+  "generate_ms": {
+    "mean": 1572.631562439017,
+    "median": 1297.7738074996523,
+    "stdev": 1138.6914939035362,
+    "min": 199.18053900073573,
+    "max": 8103.749572000197
+  },
+  "deepcopy_ms": {
+    "mean": 0.8523479451502304,
+    "median": 0.8498280003550462,
+    "stdev": 0.04820267413599729,
+    "min": 0.8065819993134937,
+    "max": 1.3263310002002981
+  },
+  "new_tokens": {
+    "mean": 122.21951219512195,
+    "median": 101.5,
+    "stdev": 87.93463819726557,
+    "min": 15,
+    "max": 622
+  },
+  "prompt_tokens": {
+    "mean": 170.21951219512195,
+    "median": 154.0,
+    "stdev": 65.15685097539888,
+    "min": 74,
+    "max": 427
+  },
+  "total_new_tokens": 20044,
+  "tokens_per_sec": 77.71655810186712,
+  "per_task_ms_mean": 1573.4839103841673,
+  "amortized_total_ms": 258066.4917070035,
+  "amortized_per_task_ms": 1573.5761689451433,
+  "wall_ms": 258150.18000500003,
+  "peak_memory_mb": 3410.41748046875,
+  "pass@1_base": 0.598,
+  "pass@1_base_plus_extra": 0.555
+}

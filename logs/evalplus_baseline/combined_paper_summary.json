@@ -1,0 +1,23 @@
+[
+  {
+    "model_name": "Qwen/Qwen3-1.7B-sanitized",
+    "mean_base": 0.5609756097560976,
+    "std_base": 0.0,
+    "mean_plus": 0.5182926829268293,
+    "std_plus": 0.0
+  },
+  {
+    "model_name": "Qwen/Qwen3-4B-sanitized",
+    "mean_base": 0.7804878048780489,
+    "std_base": 1.1102230246251565e-16,
+    "mean_plus": 0.7073170731707318,
+    "std_plus": 1.1102230246251565e-16
+  },
+  {
+    "model_name": "Qwen/Qwen3-8B-sanitized",
+    "mean_base": 0.8475609756097561,
+    "std_base": 0.0,
+    "mean_plus": 0.804878048780488,
+    "std_plus": 1.1102230246251565e-16
+  }
+]

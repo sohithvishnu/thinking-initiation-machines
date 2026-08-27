@@ -1,0 +1,104 @@
+{
+  "Qwen/Qwen3-8B": {
+    "cold": {
+      "pass@1_base": 0.848,
+      "pass@1_base_plus_extra": 0.805
+    },
+    "prompt_control": {
+      "pass@1_base": 0.835,
+      "pass@1_base_plus_extra": 0.805
+    },
+    "tim_random_seed0": {
+      "pass@1_base": 0.811,
+      "pass@1_base_plus_extra": 0.762
+    },
+    "tim_domain_seed0": {
+      "pass@1_base": 0.835,
+      "pass@1_base_plus_extra": 0.787
+    },
+    "tim_random_seed1": {
+      "pass@1_base": 0.823,
+      "pass@1_base_plus_extra": 0.793
+    },
+    "tim_domain_seed1": {
+      "pass@1_base": 0.835,
+      "pass@1_base_plus_extra": 0.787
+    },
+    "tim_random_seed2": {
+      "pass@1_base": 0.854,
+      "pass@1_base_plus_extra": 0.793
+    },
+    "tim_domain_seed2": {
+      "pass@1_base": 0.835,
+      "pass@1_base_plus_extra": 0.787
+    }
+  },
+  "Qwen/Qwen3-4B": {
+    "cold": {
+      "pass@1_base": 0.78,
+      "pass@1_base_plus_extra": 0.707
+    },
+    "prompt_control": {
+      "pass@1_base": 0.823,
+      "pass@1_base_plus_extra": 0.756
+    },
+    "tim_random_seed0": {
+      "pass@1_base": 0.805,
+      "pass@1_base_plus_extra": 0.75
+    },
+    "tim_domain_seed0": {
+      "pass@1_base": 0.805,
+      "pass@1_base_plus_extra": 0.744
+    },
+    "tim_random_seed1": {
+      "pass@1_base": 0.805,
+      "pass@1_base_plus_extra": 0.756
+    },
+    "tim_domain_seed1": {
+      "pass@1_base": 0.787,
+      "pass@1_base_plus_extra": 0.713
+    },
+    "tim_random_seed2": {
+      "pass@1_base": 0.811,
+      "pass@1_base_plus_extra": 0.75
+    },
+    "tim_domain_seed2": {
+      "pass@1_base": 0.793,
+      "pass@1_base_plus_extra": 0.738
+    }
+  },
+  "Qwen/Qwen3-1.7B": {
+    "cold": {
+      "pass@1_base": 0.561,
+      "pass@1_base_plus_extra": 0.518
+    },
+    "prompt_control": {
+      "pass@1_base": 0.604,
+      "pass@1_base_plus_extra": 0.555
+    },
+    "tim_random_seed0": {
+      "pass@1_base": 0.604,
+      "pass@1_base_plus_extra": 0.537
+    },
+    "tim_domain_seed0": {
+      "pass@1_base": 0.604,
+      "pass@1_base_plus_extra": 0.555
+    },
+    "tim_random_seed1": {
+      "pass@1_base": 0.604,
+      "pass@1_base_plus_extra": 0.537
+    },
+    "tim_domain_seed1": {
+      "pass@1_base": 0.585,
+      "pass@1_base_plus_extra": 0.53
+    },
+    "tim_random_seed2": {
+      "pass@1_base": 0.616,
+      "pass@1_base_plus_extra": 0.555
+    },
+    "tim_domain_seed2": {
+      "pass@1_base": 0.573,
+      "pass@1_base_plus_extra": 0.518
+    }
+  }
+}

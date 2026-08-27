@@ -1,0 +1,34 @@
+{
+  "cold": {
+    "pass@1_base": 0.848,
+    "pass@1_base_plus_extra": 0.805
+  },
+  "prompt_control": {
+    "pass@1_base": 0.835,
+    "pass@1_base_plus_extra": 0.805
+  },
+  "tim_random_seed0": {
+    "pass@1_base": 0.811,
+    "pass@1_base_plus_extra": 0.762
+  },
+  "tim_domain_seed0": {
+    "pass@1_base": 0.835,
+    "pass@1_base_plus_extra": 0.787
+  },
+  "tim_random_seed1": {
+    "pass@1_base": 0.823,
+    "pass@1_base_plus_extra": 0.793
+  },
+  "tim_domain_seed1": {
+    "pass@1_base": 0.835,
+    "pass@1_base_plus_extra": 0.787
+  },
+  "tim_random_seed2": {
+    "pass@1_base": 0.854,
+    "pass@1_base_plus_extra": 0.793
+  },
+  "tim_domain_seed2": {
+    "pass@1_base": 0.835,
+    "pass@1_base_plus_extra": 0.787
+  }
+}

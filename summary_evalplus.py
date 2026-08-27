@@ -1,45 +1,25 @@
-"""
-Summarize EvalPlus results across all evaluated models.
-
-Scans a logs directory for *_eval_results.json files (the structured cache
-EvalPlus writes after scoring — schema confirmed as:
-    {
-      "date": ..., "hash": ...,
-      "eval": {task_id: [{"task_id", "solution", "base_status",
-                           "plus_status", "base_fail_tests",
-                           "plus_fail_tests"}]},
-      "pass_at_k": {"base": {"pass@1": ...}, "plus": {"pass@1": ...}}
-    }
-No code re-execution needed — everything required is already in this file.
-
-Usage:
-    python summarize_evalplus_results.py [logs_dir]
-    (defaults to ./logs)
-"""
-
 import json
 import sys
+import math
 from pathlib import Path
-
+from collections import defaultdict
 
 def find_result_files(logs_dir: Path):
-    # Matches both "..._eval_results.json" and "...-sanitized_eval_results.json"
-    # naming variants seen in practice.
-    return sorted(logs_dir.glob("evalplus_baseline/*eval_results.json"))
-
+    # Recursively find all eval_results.json files
+    return sorted(logs_dir.rglob("*eval_results.json"))
 
 def model_name_from_path(path: Path) -> str:
-    """Best-effort extraction of a readable model name from the filename,
-    stripping the humaneval_/mbpp_ prefix and -sanitized_eval_results suffix."""
+    """Extracts a clean model name, removing suffixes like .eval_results."""
     stem = path.stem
-    for prefix in ("humaneval_", "mbpp_"):
+    # Remove prefixes
+    for prefix in ("humaneval_", "mbpp_", "Evalplus_"):
         if stem.startswith(prefix):
             stem = stem[len(prefix):]
-    for suffix in ("-sanitized_eval_results", "_eval_results"):
+    # Remove suffixes (Added .eval_results to this list)
+    for suffix in ("-sanitized_eval_results", "_eval_results", ".eval_results"):
         if stem.endswith(suffix):
             stem = stem[: -len(suffix)]
     return stem.replace("_", "/", 1) if "_" in stem else stem
-
 
 def summarize_file(path: Path) -> dict:
     with open(path) as f:
@@ -52,92 +32,95 @@ def summarize_file(path: Path) -> dict:
     eval_data = data.get("eval", {})
     total_tasks = len(eval_data)
 
-    base_pass = base_fail = plus_pass = plus_fail = 0
-    fragile = []  # passes base tests but fails the augmented plus tests
-    for task_id, entries in eval_data.items():
-        entry = entries[0] if entries else {}
-        b_status = entry.get("base_status")
-        p_status = entry.get("plus_status")
-        if b_status == "pass":
-            base_pass += 1
-        else:
-            base_fail += 1
-        if p_status == "pass":
-            plus_pass += 1
-        else:
-            plus_fail += 1
-        if b_status == "pass" and p_status == "fail":
-            fragile.append(task_id)
-
     return {
-        "file": path.name,
-        "total_tasks": total_tasks,
         "pass@1_base": base_pass1,
         "pass@1_plus": plus_pass1,
-        "base_pass": base_pass,
-        "base_fail": base_fail,
-        "plus_pass": plus_pass,
-        "plus_fail": plus_fail,
-        "fragile_count": len(fragile),   # passed base, failed plus — brittle solutions
-        "fragile_task_ids": fragile,
-        "date": data.get("hash", "")[:8],
+        "total_tasks": total_tasks,
     }
 
-
-def print_leaderboard(summaries: list):
-    print("=" * 78)
-    print(f"{'Model':<28} {'HumanEval':>10} {'HumanEval+':>12} {'Fragile':>10} {'Tasks':>7}")
-    print("=" * 78)
-    # Sort by pass@1_base descending, None-safe
-    summaries_sorted = sorted(
-        summaries, key=lambda s: (s["pass@1_base"] is None, -(s["pass@1_base"] or 0))
-    )
-    for s in summaries_sorted:
-        base = f"{s['pass@1_base']:.1%}" if s["pass@1_base"] is not None else "N/A"
-        plus = f"{s['pass@1_plus']:.1%}" if s["pass@1_plus"] is not None else "N/A"
-        print(f"{s['model_name']:<28} {base:>10} {plus:>12} {s['fragile_count']:>10} {s['total_tasks']:>7}")
-    print("=" * 78)
-    print("Fragile = passed original HumanEval tests but failed the augmented")
-    print("HumanEval+ tests (i.e. a solution that looked correct but wasn't robust).")
-
+def calculate_stats(values):
+    """Returns (mean, std_dev) for a list of numbers."""
+    valid_values = [v for v in values if v is not None]
+    if not valid_values:
+        return None, None
+    n = len(valid_values)
+    mean = sum(valid_values) / n
+    variance = sum((x - mean) ** 2 for x in valid_values) / n
+    std_dev = math.sqrt(variance)
+    return mean, std_dev
 
 def main():
-    logs_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("logs")
+    logs_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("logs/evalplus_baseline")
     if not logs_dir.exists():
         print(f"Directory not found: {logs_dir}")
         sys.exit(1)
 
     result_files = find_result_files(logs_dir)
     if not result_files:
-        print(f"No *eval_results.json files found in {logs_dir}")
+        print(f"No results found in {logs_dir}")
         sys.exit(1)
 
-    summaries = []
+    model_groups = defaultdict(list)
     for path in result_files:
-        s = summarize_file(path)
-        s["model_name"] = model_name_from_path(path)
-        summaries.append(s)
+        name = model_name_from_path(path)
+        scores = summarize_file(path)
+        model_groups[name].append({"path": path, "scores": scores})
 
-        # Per-model detail, useful for spotting fragile solutions worth a manual look
-        print(f"\n--- {s['model_name']} ({s['file']}) ---")
-        print(f"  pass@1 (base):        {s['pass@1_base']:.4f}" if s['pass@1_base'] is not None else "  pass@1 (base): N/A")
-        print(f"  pass@1 (base+plus):   {s['pass@1_plus']:.4f}" if s['pass@1_plus'] is not None else "  pass@1 (base+plus): N/A")
-        print(f"  base pass/fail:       {s['base_pass']}/{s['base_fail']}")
-        print(f"  plus pass/fail:       {s['plus_pass']}/{s['plus_fail']}")
-        print(f"  fragile (base ok, plus fail): {s['fragile_count']}")
-        if s["fragile_task_ids"]:
-            print(f"    -> {', '.join(s['fragile_task_ids'][:10])}"
-                  + (" ..." if len(s["fragile_task_ids"]) > 10 else ""))
+    print("=" * 85)
+    print(f"{'MODEL EVALUATION SUMMARY (3 RUNS)':^85}")
+    print("=" * 85)
 
-    print()
-    print_leaderboard(summaries)
+    sorted_names = sorted(model_groups.keys())
 
-    # Also write a machine-readable combined summary for later use (e.g. thesis tables)
-    out_path = logs_dir / "combined_summary.json"
+    for name in sorted_names:
+        group = model_groups[name]
+        base_scores = [g["scores"]["pass@1_base"] for g in group]
+        plus_scores = [g["scores"]["pass@1_plus"] for g in group]
+        m_base, s_base = calculate_stats(base_scores)
+        m_plus, s_plus = calculate_stats(plus_scores)
+
+        print(f"\nMODEL: {name}")
+        print("-" * 85)
+        # Added a Header for the Runs to be crystal clear
+        print(f"{'Run #':<6} | {'File Name':<40} | {'HumanEval (Base)':>12} | {'HumanEval+ (Plus)':>15}")
+        print("-" * 85)
+        
+        for i, item in enumerate(group, 1):
+            p_base = item["scores"]["pass@1_base"]
+            p_plus = item["scores"]["pass@1_plus"]
+            
+            base_str = f"{p_base:.2%}" if p_base is not None else "N/A"
+            plus_str = f"{p_plus:.2%}" if p_plus is not None else "N/A"
+            
+            # Shorten the filename so it fits the table nicely
+            short_name = item['path'].name.split('/')[-1]
+            if len(short_name) > 38: short_name = short_name[:35] + "..."
+            
+            print(f"  Run {i} | {short_name:<40} | {base_str:>12} | {plus_str:>15}")
+
+        print("-" * 85)
+        base_avg = f"{m_base:.2%} ± {s_base:.2%}" if m_base is not None else "N/A"
+        plus_avg = f"{m_plus:.2%} ± {s_plus:.2%}" if m_plus is not None else "N/A"
+        print(f"  AVERAGE: {base_avg:>12} | {plus_avg:>15}")
+        print("=" * 85)
+
+    # Write the combined summary for the paper
+    out_path = logs_dir / "combined_paper_summary.json"
+    json_data = []
+    for name in sorted_names:
+        group = model_groups[name]
+        m_base, s_base = calculate_stats([g["scores"]["pass@1_base"] for g in group])
+        m_plus, s_plus = calculate_stats([g["scores"]["pass@1_plus"] for g in group])
+        json_data.append({
+            "model_name": name,
+            "mean_base": m_base,
+            "std_base": s_base,
+            "mean_plus": m_plus,
+            "std_plus": s_plus
+        })
     with open(out_path, "w") as f:
-        json.dump(summaries, f, indent=2)
-    print(f"\nCombined summary written to: {out_path}")
-
+        json.dump(json_data, f, indent=2)
+    print(f"\nCombined summary for paper written to: {out_path}")
 
 if __name__ == "__main__":
     main()
