@@ -1,0 +1,41 @@
+{
+  "condition": "B_bf16_tim_domain_seed0_pass2",
+  "n_tasks": 1,
+  "prime_ms": 478.46706800009997,
+  "primed_cache_len": 160,
+  "generate_ms": {
+    "mean": 339.58091999920725,
+    "median": 339.58091999920725,
+    "stdev": 0.0,
+    "min": 339.58091999920725,
+    "max": 339.58091999920725
+  },
+  "deepcopy_ms": {
+    "mean": 0.9432999995624414,
+    "median": 0.9432999995624414,
+    "stdev": 0.0,
+    "min": 0.9432999995624414,
+    "max": 0.9432999995624414
+  },
+  "new_tokens": {
+    "mean": 25,
+    "median": 25,
+    "stdev": 0.0,
+    "min": 25,
+    "max": 25
+  },
+  "prompt_tokens": {
+    "mean": 90,
+    "median": 90,
+    "stdev": 0.0,
+    "min": 90,
+    "max": 90
+  },
+  "total_new_tokens": 25,
+  "tokens_per_sec": 73.62015510193672,
+  "per_task_ms_mean": 340.5242199987697,
+  "amortized_total_ms": 818.9912879988697,
+  "amortized_per_task_ms": 818.9912879988697,
+  "wall_ms": 341.3410010016378,
+  "peak_memory_mb": 3364.2392578125
+}
