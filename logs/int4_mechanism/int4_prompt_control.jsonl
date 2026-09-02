@@ -1,0 +1,1 @@
+{"task_id": "Mbpp/2", "completion": "def similar_elements(list1, list2):\n    return set.intersection(list1, list2)"}

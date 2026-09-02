@@ -1,0 +1,43 @@
+{
+  "condition": "int4_tim_entropy_seed0",
+  "n_tasks": 164,
+  "prime_ms": 26.49104800002533,
+  "primed_cache_len": 64,
+  "generate_ms": {
+    "mean": 3218.9367744877463,
+    "median": 2687.696128999505,
+    "stdev": 2298.8286060798055,
+    "min": 439.153358999647,
+    "max": 15835.142050000286
+  },
+  "deepcopy_ms": {
+    "mean": 1.1266462194792595,
+    "median": 1.0848870001609612,
+    "stdev": 0.20094897738177672,
+    "min": 0.9084840003197314,
+    "max": 2.1196190000409842
+  },
+  "new_tokens": {
+    "mean": 159.6951219512195,
+    "median": 134.0,
+    "stdev": 113.5783482698918,
+    "min": 21,
+    "max": 768
+  },
+  "prompt_tokens": {
+    "mean": 170.21951219512195,
+    "median": 154.0,
+    "stdev": 65.15685097539888,
+    "min": 74,
+    "max": 427
+  },
+  "total_new_tokens": 26190,
+  "tokens_per_sec": 49.61113968342327,
+  "per_task_ms_mean": 3220.0634207072258,
+  "amortized_total_ms": 528116.8920439851,
+  "amortized_per_task_ms": 3220.224951487714,
+  "wall_ms": 528238.6086300003,
+  "peak_memory_mb": 1468.78466796875,
+  "pass@1_base": 0.585,
+  "pass@1_base_plus_extra": 0.53
+}

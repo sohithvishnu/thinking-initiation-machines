@@ -1,0 +1,45 @@
+{
+  "condition": "B_bf16_tim_domain_seed0_pass2",
+  "n_tasks": 378,
+  "prime_ms": 814.6498339992831,
+  "primed_cache_len": 160,
+  "generate_ms": {
+    "mean": 636.6287664338689,
+    "median": 433.24194449996867,
+    "stdev": 522.1471770509968,
+    "min": 186.2768920000235,
+    "max": 4741.643342998941
+  },
+  "deepcopy_ms": {
+    "mean": 0.9298835740376263,
+    "median": 0.9072869997908128,
+    "stdev": 0.08646363112664077,
+    "min": 0.8749810003791936,
+    "max": 1.5473300009034574
+  },
+  "new_tokens": {
+    "mean": 48.53968253968254,
+    "median": 33.0,
+    "stdev": 40.15063912469441,
+    "min": 14,
+    "max": 363
+  },
+  "prompt_tokens": {
+    "mean": 87.505291005291,
+    "median": 79.5,
+    "stdev": 24.89918771214916,
+    "min": 59,
+    "max": 210
+  },
+  "total_new_tokens": 18348,
+  "tokens_per_sec": 76.24487786120908,
+  "per_task_ms_mean": 637.5586500079066,
+  "amortized_total_ms": 241811.81953698798,
+  "amortized_per_task_ms": 639.71380829891,
+  "wall_ms": 241228.91320000053,
+  "peak_memory_mb": 3431.1494140625,
+  "pass@1_base": 0.574,
+  "pass@1_base_plus_extra": 0.489,
+  "n_scored": 378,
+  "n_canonical": 378
+}

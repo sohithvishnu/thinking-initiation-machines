@@ -1,0 +1,45 @@
+{
+  "condition": "B_bf16_tim_domain_seed0",
+  "n_tasks": 378,
+  "prime_ms": 317.69768800040765,
+  "primed_cache_len": 64,
+  "generate_ms": {
+    "mean": 678.9702878703883,
+    "median": 449.3048035010361,
+    "stdev": 724.481177800333,
+    "min": 184.05683300079545,
+    "max": 10029.452007000145
+  },
+  "deepcopy_ms": {
+    "mean": 0.9266149920279979,
+    "median": 0.8991819995571859,
+    "stdev": 0.09373219265031009,
+    "min": 0.8663950011396082,
+    "max": 1.497015000495594
+  },
+  "new_tokens": {
+    "mean": 52.56878306878307,
+    "median": 34.5,
+    "stdev": 55.859013559796914,
+    "min": 14,
+    "max": 768
+  },
+  "prompt_tokens": {
+    "mean": 87.505291005291,
+    "median": 79.5,
+    "stdev": 24.89918771214916,
+    "min": 59,
+    "max": 210
+  },
+  "total_new_tokens": 19871,
+  "tokens_per_sec": 77.42427615450848,
+  "per_task_ms_mean": 679.8969028624164,
+  "amortized_total_ms": 257318.7269699938,
+  "amortized_per_task_ms": 680.7373729364915,
+  "wall_ms": 257233.85308199975,
+  "peak_memory_mb": 3422.65966796875,
+  "pass@1_base": 0.579,
+  "pass@1_base_plus_extra": 0.492,
+  "n_scored": 378,
+  "n_canonical": 378
+}

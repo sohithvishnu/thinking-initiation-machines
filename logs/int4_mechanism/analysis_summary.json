@@ -1,0 +1,475 @@
+{
+  "rung1": {
+    "per_seed": {
+      "seed0": {
+        "both_pass": 72,
+        "cold_only": 12,
+        "tim_only": 21,
+        "both_fail": 59,
+        "n": 164,
+        "churn_pct": 20.121951219512198,
+        "mcnemar_p": 0.16275565745308995
+      },
+      "seed1": {
+        "both_pass": 74,
+        "cold_only": 10,
+        "tim_only": 21,
+        "both_fail": 59,
+        "n": 164,
+        "churn_pct": 18.902439024390244,
+        "mcnemar_p": 0.07075554598122835
+      },
+      "seed2": {
+        "both_pass": 76,
+        "cold_only": 8,
+        "tim_only": 23,
+        "both_fail": 57,
+        "n": 164,
+        "churn_pct": 18.902439024390244,
+        "mcnemar_p": 0.010673840530216694
+      }
+    },
+    "pooled": {
+      "both_pass": 222,
+      "cold_only": 30,
+      "tim_only": 65,
+      "both_fail": 175,
+      "n": 492,
+      "churn_pct": 19.308943089430894,
+      "mcnemar_p": 0.0004247927288947456
+    },
+    "overlap": {
+      "seed0": {
+        "quant_broke_n": 19,
+        "quant_broke_ids": [
+          "HumanEval/104",
+          "HumanEval/110",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/128",
+          "HumanEval/148",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/162",
+          "HumanEval/18",
+          "HumanEval/2",
+          "HumanEval/40",
+          "HumanEval/44",
+          "HumanEval/48",
+          "HumanEval/49",
+          "HumanEval/54",
+          "HumanEval/59",
+          "HumanEval/92",
+          "HumanEval/96"
+        ],
+        "tim_fixes_n": 21,
+        "tim_fixes_ids": [
+          "HumanEval/104",
+          "HumanEval/111",
+          "HumanEval/113",
+          "HumanEval/115",
+          "HumanEval/119",
+          "HumanEval/12",
+          "HumanEval/135",
+          "HumanEval/159",
+          "HumanEval/16",
+          "HumanEval/18",
+          "HumanEval/33",
+          "HumanEval/41",
+          "HumanEval/44",
+          "HumanEval/48",
+          "HumanEval/5",
+          "HumanEval/59",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/83",
+          "HumanEval/89",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_quant_broken": [
+          "HumanEval/104",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/16",
+          "HumanEval/18",
+          "HumanEval/44",
+          "HumanEval/48",
+          "HumanEval/59",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_bf16_also_failed": [
+          "HumanEval/111",
+          "HumanEval/115",
+          "HumanEval/119",
+          "HumanEval/135",
+          "HumanEval/159",
+          "HumanEval/33",
+          "HumanEval/41",
+          "HumanEval/5",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/83",
+          "HumanEval/89"
+        ]
+      },
+      "seed1": {
+        "quant_broke_n": 19,
+        "quant_broke_ids": [
+          "HumanEval/104",
+          "HumanEval/110",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/128",
+          "HumanEval/148",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/162",
+          "HumanEval/18",
+          "HumanEval/2",
+          "HumanEval/40",
+          "HumanEval/44",
+          "HumanEval/48",
+          "HumanEval/49",
+          "HumanEval/54",
+          "HumanEval/59",
+          "HumanEval/92",
+          "HumanEval/96"
+        ],
+        "tim_fixes_n": 21,
+        "tim_fixes_ids": [
+          "HumanEval/100",
+          "HumanEval/104",
+          "HumanEval/111",
+          "HumanEval/113",
+          "HumanEval/119",
+          "HumanEval/12",
+          "HumanEval/135",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/162",
+          "HumanEval/18",
+          "HumanEval/20",
+          "HumanEval/33",
+          "HumanEval/40",
+          "HumanEval/44",
+          "HumanEval/5",
+          "HumanEval/63",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/88",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_quant_broken": [
+          "HumanEval/104",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/162",
+          "HumanEval/18",
+          "HumanEval/40",
+          "HumanEval/44",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_bf16_also_failed": [
+          "HumanEval/100",
+          "HumanEval/111",
+          "HumanEval/119",
+          "HumanEval/135",
+          "HumanEval/20",
+          "HumanEval/33",
+          "HumanEval/5",
+          "HumanEval/63",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/88"
+        ]
+      },
+      "seed2": {
+        "quant_broke_n": 19,
+        "quant_broke_ids": [
+          "HumanEval/104",
+          "HumanEval/110",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/128",
+          "HumanEval/148",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/162",
+          "HumanEval/18",
+          "HumanEval/2",
+          "HumanEval/40",
+          "HumanEval/44",
+          "HumanEval/48",
+          "HumanEval/49",
+          "HumanEval/54",
+          "HumanEval/59",
+          "HumanEval/92",
+          "HumanEval/96"
+        ],
+        "tim_fixes_n": 23,
+        "tim_fixes_ids": [
+          "HumanEval/104",
+          "HumanEval/111",
+          "HumanEval/113",
+          "HumanEval/119",
+          "HumanEval/12",
+          "HumanEval/121",
+          "HumanEval/128",
+          "HumanEval/135",
+          "HumanEval/137",
+          "HumanEval/148",
+          "HumanEval/155",
+          "HumanEval/159",
+          "HumanEval/16",
+          "HumanEval/18",
+          "HumanEval/20",
+          "HumanEval/33",
+          "HumanEval/41",
+          "HumanEval/63",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/88",
+          "HumanEval/89",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_quant_broken": [
+          "HumanEval/104",
+          "HumanEval/113",
+          "HumanEval/12",
+          "HumanEval/128",
+          "HumanEval/148",
+          "HumanEval/155",
+          "HumanEval/16",
+          "HumanEval/18",
+          "HumanEval/96"
+        ],
+        "tim_fixes_that_were_bf16_also_failed": [
+          "HumanEval/111",
+          "HumanEval/119",
+          "HumanEval/121",
+          "HumanEval/135",
+          "HumanEval/137",
+          "HumanEval/159",
+          "HumanEval/20",
+          "HumanEval/33",
+          "HumanEval/41",
+          "HumanEval/63",
+          "HumanEval/71",
+          "HumanEval/73",
+          "HumanEval/88",
+          "HumanEval/89"
+        ]
+      }
+    },
+    "verdict": "directional (tim_only > cold_only); pooled McNemar significant (p=0.0004)"
+  },
+  "rung2": {
+    "cold_vs_prompt_control": {
+      "cold_pct": 0.5121951219512195,
+      "prompt_control_pct": 0.5609756097560976,
+      "cold_only": 6,
+      "prompt_control_only": 14,
+      "mcnemar_p": 0.11531829833984375
+    },
+    "prompt_control_vs_tim_domain": {
+      "prompt_control_pct": 0.5609756097560976,
+      "tim_domain_pct": 0.5670731707317073,
+      "prompt_control_only": 15,
+      "tim_domain_only": 16,
+      "mcnemar_p": 1.0
+    },
+    "verdict": "context, not KV injection \u2014 prompt_control matches tim_domain",
+    "gap_prompt_control_pp": 4.878048780487809,
+    "gap_tim_domain_pp": 5.487804878048774
+  },
+  "rung3": {
+    "tim_random": {
+      "seed0": {
+        "pct": 0.5975609756097561,
+        "cold_only": 11,
+        "random_only": 25,
+        "mcnemar_p": 0.028816719655878845
+      },
+      "seed1": {
+        "pct": 0.5670731707317073,
+        "cold_only": 13,
+        "random_only": 22,
+        "mcnemar_p": 0.175465248990804
+      },
+      "seed2": {
+        "pct": 0.5609756097560976,
+        "cold_only": 10,
+        "random_only": 18,
+        "mcnemar_p": 0.1849333420395851
+      },
+      "pooled": {
+        "cold_only": 34,
+        "random_only": 65,
+        "mcnemar_p": 0.0023946293575060097
+      }
+    },
+    "neutral_prefix": {
+      "pct": 0.4268292682926829,
+      "cold_only": 30,
+      "neutral_only": 16,
+      "mcnemar_p": 0.054076031858869555
+    },
+    "verdict_3a": "random ~ domain -> mechanical/positional (sink-consistent), not content-specific",
+    "domain_gap_pooled": 35,
+    "random_gap_pooled": 31,
+    "verdict_3b": "neutral prefix gap=-8.5pp, McNemar p=0.0541 \u2014 partial effect, report as-is",
+    "neutral_gap_pp": -8.53658536585366
+  },
+  "rung4": {
+    "seeds": {
+      "seed0": {
+        "pct": 0.5670731707317073,
+        "k": 93,
+        "n": 164
+      },
+      "seed1": {
+        "pct": 0.5792682926829268,
+        "k": 95,
+        "n": 164
+      },
+      "seed2": {
+        "pct": 0.6036585365853658,
+        "k": 99,
+        "n": 164
+      },
+      "seed3": {
+        "pct": 0.5609756097560976,
+        "k": 92,
+        "n": 164
+      },
+      "seed4": {
+        "pct": 0.5792682926829268,
+        "k": 95,
+        "n": 164
+      },
+      "seed5": {
+        "pct": 0.5975609756097561,
+        "k": 98,
+        "n": 164
+      },
+      "seed6": {
+        "pct": 0.5548780487804879,
+        "k": 91,
+        "n": 164
+      },
+      "seed7": {
+        "pct": 0.5792682926829268,
+        "k": 95,
+        "n": 164
+      }
+    },
+    "mean_pct": 0.5777439024390244,
+    "std_pct": 0.015768415293885042,
+    "min_pct": 0.5548780487804879,
+    "max_pct": 0.6036585365853658,
+    "n_seeds": 8,
+    "vs_bf16_cold": [
+      {
+        "seed": 0,
+        "bf16_cold_only": 17,
+        "int4_tim_only": 25,
+        "mcnemar_p": 0.27995623852893914
+      },
+      {
+        "seed": 1,
+        "bf16_cold_only": 14,
+        "int4_tim_only": 24,
+        "mcnemar_p": 0.14330665429588407
+      },
+      {
+        "seed": 2,
+        "bf16_cold_only": 13,
+        "int4_tim_only": 27,
+        "mcnemar_p": 0.03847730828420026
+      },
+      {
+        "seed": 3,
+        "bf16_cold_only": 16,
+        "int4_tim_only": 23,
+        "mcnemar_p": 0.3367836351899315
+      },
+      {
+        "seed": 4,
+        "bf16_cold_only": 18,
+        "int4_tim_only": 28,
+        "mcnemar_p": 0.18392482137699062
+      },
+      {
+        "seed": 5,
+        "bf16_cold_only": 15,
+        "int4_tim_only": 28,
+        "mcnemar_p": 0.0659940344557981
+      },
+      {
+        "seed": 6,
+        "bf16_cold_only": 20,
+        "int4_tim_only": 26,
+        "mcnemar_p": 0.4613911821367651
+      },
+      {
+        "seed": 7,
+        "bf16_cold_only": 16,
+        "int4_tim_only": 26,
+        "mcnemar_p": 0.16414940178310644
+      }
+    ],
+    "vs_bf16_tim_domain": [
+      {
+        "seed": 0,
+        "bf16_tim_only": 13,
+        "int4_tim_only": 15,
+        "mcnemar_p": 0.8505540192127228
+      },
+      {
+        "seed": 1,
+        "bf16_tim_only": 14,
+        "int4_tim_only": 18,
+        "mcnemar_p": 0.5966148958541453
+      },
+      {
+        "seed": 2,
+        "bf16_tim_only": 10,
+        "int4_tim_only": 18,
+        "mcnemar_p": 0.1849333420395851
+      },
+      {
+        "seed": 3,
+        "bf16_tim_only": 14,
+        "int4_tim_only": 15,
+        "mcnemar_p": 1.0
+      },
+      {
+        "seed": 4,
+        "bf16_tim_only": 14,
+        "int4_tim_only": 18,
+        "mcnemar_p": 0.5966148958541453
+      },
+      {
+        "seed": 5,
+        "bf16_tim_only": 13,
+        "int4_tim_only": 20,
+        "mcnemar_p": 0.296206368599087
+      },
+      {
+        "seed": 6,
+        "bf16_tim_only": 16,
+        "int4_tim_only": 16,
+        "mcnemar_p": 1.0
+      },
+      {
+        "seed": 7,
+        "bf16_tim_only": 12,
+        "int4_tim_only": 16,
+        "mcnemar_p": 0.5715881884098053
+      }
+    ],
+    "verdict": "NOT established across the distribution with paired significance (seed range 55.5-60.4%, mean 57.8%\u00b11.6pp) \u2014 honest reading is 'priming/context partially rescues int4 toward bf16-cold', not 'beyond it'"
+  }
+}

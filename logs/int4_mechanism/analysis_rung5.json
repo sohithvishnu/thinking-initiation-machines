@@ -1,0 +1,66 @@
+{
+  "rung5": {
+    "int4_cold": {
+      "k": 84,
+      "n": 164,
+      "pct": 0.5121951219512195
+    },
+    "entropy_results": {
+      "seed0": {
+        "k": 87,
+        "n": 164,
+        "pct": 0.5304878048780488,
+        "cold_only": 13,
+        "entropy_only": 16,
+        "mcnemar_p": 0.711071103811264,
+        "both_pass": 71,
+        "both_fail": 64
+      },
+      "seed1": {
+        "k": 93,
+        "n": 164,
+        "pct": 0.5670731707317073,
+        "cold_only": 8,
+        "entropy_only": 17,
+        "mcnemar_p": 0.10775214433670044,
+        "both_pass": 76,
+        "both_fail": 63
+      },
+      "seed2": {
+        "k": 86,
+        "n": 164,
+        "pct": 0.524390243902439,
+        "cold_only": 12,
+        "entropy_only": 14,
+        "mcnemar_p": 0.8450189828872681,
+        "both_pass": 72,
+        "both_fail": 66
+      }
+    },
+    "entropy_mean_pct": 54.0650406504065,
+    "pooled_mcnemar": {
+      "cold_only": 33,
+      "entropy_only": 47,
+      "p": 0.1456354544029827
+    },
+    "domain_vs_entropy": {
+      "seed0": {
+        "tim_domain_only": 18,
+        "entropy_only": 12,
+        "mcnemar_p": 0.36159460805356514
+      },
+      "seed1": {
+        "tim_domain_only": 11,
+        "entropy_only": 11,
+        "mcnemar_p": 1.0
+      },
+      "seed2": {
+        "tim_domain_only": 16,
+        "entropy_only": 9,
+        "mcnemar_p": 0.2295229434967041
+      }
+    },
+    "verdict": "ENTROPY FAILS TO RESCUE: The recovery mechanism strictly requires semantic richness / valid distributional tokens. Test-time compute over diverse but meaningless noise does not rescue the model's capacity. However, unlike the degenerate neutral_prefix, diverse gibberish at least does not actively harm \u2014 suggesting the damage from neutral_prefix is specifically from repetition/degeneracy, not from non-semantic content.",
+    "verdict_short": "entropy_neutral"
+  }
+}

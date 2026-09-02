@@ -1,0 +1,44 @@
+{
+  "int4_neutral_prefix": {
+    "pass@1_base": 0.397,
+    "pass@1_base_plus_extra": 0.336,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "int4_prompt_control": {
+    "pass@1_base": 0.582,
+    "pass@1_base_plus_extra": 0.487,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "int4_tim_entropy_seed0": {
+    "pass@1_base": 0.574,
+    "pass@1_base_plus_extra": 0.479,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "B_bf16_tim_domain_seed0": {
+    "pass@1_base": 0.579,
+    "pass@1_base_plus_extra": 0.492,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "B_bf16_tim_domain_seed0_pass2": {
+    "pass@1_base": 0.574,
+    "pass@1_base_plus_extra": 0.489,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "B_bf16_tim_domain_seed0_pass3": {
+    "pass@1_base": 0.561,
+    "pass@1_base_plus_extra": 0.484,
+    "n_scored": 378,
+    "n_canonical": 378
+  },
+  "D_nf4_tim_domain_seed0": {
+    "pass@1_base": 0.574,
+    "pass@1_base_plus_extra": 0.484,
+    "n_scored": 378,
+    "n_canonical": 378
+  }
+}

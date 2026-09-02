@@ -1,0 +1,43 @@
+{
+  "condition": "int4_tim_domain_seed5",
+  "n_tasks": 164,
+  "prime_ms": 20.260058000076242,
+  "primed_cache_len": 64,
+  "generate_ms": {
+    "mean": 2746.809251286569,
+    "median": 2455.0444675001017,
+    "stdev": 1430.7536256972019,
+    "min": 617.4443869999777,
+    "max": 8768.719992000115
+  },
+  "deepcopy_ms": {
+    "mean": 0.9060845182891237,
+    "median": 0.9041250000336731,
+    "stdev": 0.02626305866853452,
+    "min": 0.8432759996139794,
+    "max": 1.208189999942988
+  },
+  "new_tokens": {
+    "mean": 195.23170731707316,
+    "median": 173.5,
+    "stdev": 102.1156444836176,
+    "min": 43,
+    "max": 626
+  },
+  "prompt_tokens": {
+    "mean": 170.21951219512195,
+    "median": 154.0,
+    "stdev": 65.15685097539888,
+    "min": 74,
+    "max": 427
+  },
+  "total_new_tokens": 32018,
+  "tokens_per_sec": 71.07581541223848,
+  "per_task_ms_mean": 2747.715335804858,
+  "amortized_total_ms": 450645.5751299968,
+  "amortized_per_task_ms": 2747.838872743883,
+  "wall_ms": 450746.27050900017,
+  "peak_memory_mb": 1452.34423828125,
+  "pass@1_base": 0.652,
+  "pass@1_base_plus_extra": 0.598
+}

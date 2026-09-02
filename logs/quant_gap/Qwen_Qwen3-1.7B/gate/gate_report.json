@@ -1,0 +1,202 @@
+{
+  "model_id": "Qwen/Qwen3-1.7B",
+  "n_tasks": 164,
+  "A_quant_report": {
+    "quant": "bf16",
+    "bnb_config": null,
+    "param_dtypes_loaded": [
+      "torch.bfloat16"
+    ],
+    "device_map": "sequential"
+  },
+  "A": {
+    "condition": "A_bf16_cold",
+    "n_tasks": 164,
+    "prime_ms": 0.0,
+    "primed_cache_len": 0,
+    "generate_ms": {
+      "mean": 996.7221213963442,
+      "median": 806.618248999996,
+      "stdev": 841.2134219247499,
+      "min": 196.6008750000583,
+      "max": 7492.773532000001
+    },
+    "deepcopy_ms": {
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "new_tokens": {
+      "mean": 77.47560975609755,
+      "median": 63.0,
+      "stdev": 64.81008383030847,
+      "min": 15,
+      "max": 573
+    },
+    "prompt_tokens": {
+      "mean": 170.21951219512195,
+      "median": 154.0,
+      "stdev": 65.15685097539888,
+      "min": 74,
+      "max": 427
+    },
+    "total_new_tokens": 12706,
+    "tokens_per_sec": 77.73040057298937,
+    "per_task_ms_mean": 996.722121396344,
+    "amortized_total_ms": 163462.42790900043,
+    "amortized_per_task_ms": 996.722121396344,
+    "wall_ms": 163569.21904199998,
+    "peak_memory_mb": 3415.201171875,
+    "pass@1_base": 0.561,
+    "pass@1_base_plus_extra": 0.518
+  },
+  "C_determinism": {
+    "n_runs": 3,
+    "identical": true,
+    "outputs": [
+      [
+        73594,
+        12669,
+        198,
+        1499,
+        19496,
+        1159,
+        1759,
+        1406,
+        750,
+        702,
+        12704,
+        22801,
+        47207,
+        25,
+        1759,
+        95381,
+        1125,
+        12171,
+        25,
+        2224,
+        8,
+        1464,
+        1807,
+        510,
+        262,
+        4210,
+        4248,
+        421,
+        304,
+        2661,
+        1140,
+        315,
+        5109,
+        11,
+        525,
+        894,
+        1378,
+        5109,
+        12128,
+        311,
+        1817,
+        1008,
+        1091,
+        198,
+        262,
+        2661,
+        12171,
+        624,
+        262,
+        12109,
+        702,
+        12704,
+        22801,
+        2561,
+        16,
+        13,
+        15,
+        11,
+        220,
+        17,
+        13,
+        15,
+        11,
+        220
+      ]
+    ]
+  },
+  "C_quant_report": {
+    "quant": "nf4",
+    "bnb_config": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "param_dtypes_loaded": [
+      "torch.bfloat16",
+      "torch.uint8"
+    ],
+    "device_map": "sequential"
+  },
+  "C": {
+    "condition": "C_nf4_cold",
+    "n_tasks": 164,
+    "prime_ms": 0.0,
+    "primed_cache_len": 0,
+    "generate_ms": {
+      "mean": 1599.440675115844,
+      "median": 1176.020301499932,
+      "stdev": 1247.740719440487,
+      "min": 222.07013900015227,
+      "max": 8720.685811999829
+    },
+    "deepcopy_ms": {
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "new_tokens": {
+      "mean": 113.54268292682927,
+      "median": 84.0,
+      "stdev": 89.85220592659411,
+      "min": 15,
+      "max": 633
+    },
+    "prompt_tokens": {
+      "mean": 170.21951219512195,
+      "median": 154.0,
+      "stdev": 65.15685097539888,
+      "min": 74,
+      "max": 427
+    },
+    "total_new_tokens": 18621,
+    "tokens_per_sec": 70.9889930232052,
+    "per_task_ms_mean": 1599.4406751158438,
+    "amortized_total_ms": 262308.2707189984,
+    "amortized_per_task_ms": 1599.4406751158438,
+    "wall_ms": 262415.6264599999,
+    "peak_memory_mb": 1427.70361328125,
+    "pass@1_base": 0.555,
+    "pass@1_base_plus_extra": 0.512
+  },
+  "gate": {
+    "A_pass_at_1_plus": 0.518,
+    "A_k": 85,
+    "A_n": 164,
+    "A_wilson_ci": [
+      0.44228053905570636,
+      0.5934674819761259
+    ],
+    "C_pass_at_1_plus": 0.512,
+    "C_k": 84,
+    "C_n": 164,
+    "C_wilson_ci": [
+      0.43629504201483804,
+      0.5875369720063833
+    ],
+    "damage_pp": 0.6000000000000005,
+    "gate_passed": false
+  }
+}

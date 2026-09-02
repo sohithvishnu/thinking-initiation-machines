@@ -1,0 +1,91 @@
+{
+  "model_id": "Qwen/Qwen3-1.7B",
+  "n_tasks": 1,
+  "quant_report": {
+    "quant": "nf4",
+    "bnb_config": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "param_dtypes_loaded": [
+      "torch.bfloat16",
+      "torch.uint8"
+    ],
+    "device_map": "sequential"
+  },
+  "determinism": {
+    "n_runs": 3,
+    "identical": true,
+    "outputs": [
+      [
+        73594,
+        12669,
+        198,
+        750,
+        4428,
+        22801,
+        7307,
+        16,
+        11,
+        1140,
+        17,
+        982,
+        262,
+        470,
+        738,
+        97075,
+        7307,
+        16,
+        11,
+        1140,
+        17,
+        340,
+        73594,
+        151645
+      ]
+    ]
+  },
+  "prompt_control": {
+    "condition": "int4_prompt_control",
+    "n_tasks": 1,
+    "prime_ms": 0.0,
+    "primed_cache_len": 0,
+    "generate_ms": {
+      "mean": 397.3435629995947,
+      "median": 397.3435629995947,
+      "stdev": 0.0,
+      "min": 397.3435629995947,
+      "max": 397.3435629995947
+    },
+    "deepcopy_ms": {
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "new_tokens": {
+      "mean": 24,
+      "median": 24,
+      "stdev": 0.0,
+      "min": 24,
+      "max": 24
+    },
+    "prompt_tokens": {
+      "mean": 106,
+      "median": 106,
+      "stdev": 0.0,
+      "min": 106,
+      "max": 106
+    },
+    "total_new_tokens": 24,
+    "tokens_per_sec": 60.401129488096124,
+    "per_task_ms_mean": 397.3435629995947,
+    "amortized_total_ms": 397.3435629995947,
+    "amortized_per_task_ms": 397.3435629995947,
+    "wall_ms": 398.3871430009458,
+    "peak_memory_mb": 1360.2548828125
+  }
+}

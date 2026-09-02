@@ -1,0 +1,144 @@
+{"task_id": "HumanEval/0", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/0", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/104", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/104", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/107", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/107", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/109", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/109", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/11", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/11", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/116", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/116", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/12", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/12", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/123", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/123", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/127", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/127", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/13", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/13", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/14", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/14", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/146", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/146", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/147", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/147", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/15", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/15", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/150", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/150", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/151", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/151", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/152", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/152", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/155", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/155", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/156", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"readability\"}", "winner": "1", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/156", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/157", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"readability\"}", "winner": "2", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/157", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"readability\"}", "winner": "1", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/158", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/158", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/16", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/16", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/162", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/162", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/17", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/17", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/18", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"idiomaticity\"}", "winner": "2", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/18", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/19", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/19", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/21", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/21", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/23", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/23", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/25", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/25", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/27", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/27", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/28", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/28", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/29", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/29", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/3", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/3", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/30", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/30", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/31", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/31", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/34", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/34", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/35", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"idiomaticity\"}", "winner": "2", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/35", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/36", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/36", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/37", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/37", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/4", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"readability\"}", "winner": "1", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/4", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"readability\"}", "winner": "2", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/40", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/40", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/42", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/42", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/43", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/43", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/45", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/45", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/46", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/46", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/47", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/47", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/48", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/48", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/50", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/50", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/51", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"readability\"}", "winner": "2", "reason": "readability", "parse_ok": true}
+{"task_id": "HumanEval/51", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/52", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/52", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/53", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/53", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/54", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/54", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/55", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/55", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/56", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/56", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/58", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/58", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/59", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/59", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/60", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/60", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/61", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/61", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/62", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/62", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"idiomaticity\"}", "winner": "2", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/66", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/66", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"idiomaticity\"}", "winner": "2", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/69", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/69", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/7", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/7", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/74", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/74", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/79", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/79", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/8", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/8", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/80", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/80", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/82", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"documentation\"}", "winner": "2", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/82", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"documentation\"}", "winner": "1", "reason": "documentation", "parse_ok": true}
+{"task_id": "HumanEval/85", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"idiomaticity\"}", "winner": "2", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/85", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"idiomaticity\"}", "winner": "1", "reason": "idiomaticity", "parse_ok": true}
+{"task_id": "HumanEval/9", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/9", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/94", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/94", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"tie\", \"reason\": \"no meaningful difference\"}", "winner": "tie", "reason": "no meaningful difference", "parse_ok": true}
+{"task_id": "HumanEval/96", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"robustness\"}", "winner": "2", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/96", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"robustness\"}", "winner": "1", "reason": "robustness", "parse_ok": true}
+{"task_id": "HumanEval/98", "order": "A", "model": "gemma4:12b", "raw": "{\"winner\": \"1\", \"reason\": \"simplicity\"}", "winner": "1", "reason": "simplicity", "parse_ok": true}
+{"task_id": "HumanEval/98", "order": "B", "model": "gemma4:12b", "raw": "{\"winner\": \"2\", \"reason\": \"simplicity\"}", "winner": "2", "reason": "simplicity", "parse_ok": true}

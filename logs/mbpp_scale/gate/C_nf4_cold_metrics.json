@@ -1,0 +1,43 @@
+{
+  "condition": "C_nf4_cold",
+  "n_tasks": 378,
+  "prime_ms": 0.0,
+  "primed_cache_len": 0,
+  "generate_ms": {
+    "mean": 820.5698216455058,
+    "median": 555.9106004993737,
+    "stdev": 882.2385205337629,
+    "min": 208.22393400158035,
+    "max": 11975.280962000397
+  },
+  "deepcopy_ms": {
+    "mean": 0.0,
+    "median": 0.0,
+    "stdev": 0.0,
+    "min": 0.0,
+    "max": 0.0
+  },
+  "new_tokens": {
+    "mean": 56.46825396825397,
+    "median": 38.5,
+    "stdev": 59.43392843597271,
+    "min": 14,
+    "max": 768
+  },
+  "prompt_tokens": {
+    "mean": 87.505291005291,
+    "median": 79.5,
+    "stdev": 24.89918771214916,
+    "min": 59,
+    "max": 210
+  },
+  "total_new_tokens": 21345,
+  "tokens_per_sec": 68.81590387398965,
+  "per_task_ms_mean": 820.5698216455058,
+  "amortized_total_ms": 310175.3925820012,
+  "amortized_per_task_ms": 820.5698216455058,
+  "wall_ms": 310409.7380700004,
+  "peak_memory_mb": 1416.09814453125,
+  "pass@1_base": 0.585,
+  "pass@1_base_plus_extra": 0.487
+}

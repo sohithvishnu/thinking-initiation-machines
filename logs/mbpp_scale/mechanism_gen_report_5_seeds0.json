@@ -1,0 +1,129 @@
+{
+  "model_id": "Qwen/Qwen3-1.7B",
+  "n_tasks": 378,
+  "seeds": [
+    0
+  ],
+  "quant_report": {
+    "quant": "nf4",
+    "bnb_config": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "param_dtypes_loaded": [
+      "torch.bfloat16",
+      "torch.uint8"
+    ],
+    "device_map": "sequential"
+  },
+  "determinism": {
+    "n_runs": 3,
+    "identical": true,
+    "outputs": [
+      [
+        73594,
+        12669,
+        198,
+        750,
+        4428,
+        22801,
+        7307,
+        16,
+        11,
+        1140,
+        17,
+        982,
+        262,
+        470,
+        738,
+        97075,
+        7307,
+        16,
+        11,
+        1140,
+        17,
+        340,
+        73594,
+        151645
+      ]
+    ]
+  },
+  "entropy_seeds": {
+    "seed0": {
+      "condition": "int4_tim_entropy_seed0",
+      "n_tasks": 378,
+      "prime_ms": 20.97123699968506,
+      "primed_cache_len": 64,
+      "generate_ms": {
+        "mean": 811.8288447063056,
+        "median": 509.75439050034765,
+        "stdev": 991.7227598001211,
+        "min": 205.1986209989991,
+        "max": 10550.3173649995
+      },
+      "deepcopy_ms": {
+        "mean": 0.9310957830936387,
+        "median": 0.9209830004692776,
+        "stdev": 0.05871895577598744,
+        "min": 0.8918140010791831,
+        "max": 1.6213009985222016
+      },
+      "new_tokens": {
+        "mean": 57.67195767195767,
+        "median": 35.5,
+        "stdev": 72.02305852752703,
+        "min": 14,
+        "max": 768
+      },
+      "prompt_tokens": {
+        "mean": 87.505291005291,
+        "median": 79.5,
+        "stdev": 24.89918771214916,
+        "min": 59,
+        "max": 210
+      },
+      "total_new_tokens": 21800,
+      "tokens_per_sec": 71.0395522997481,
+      "per_task_ms_mean": 812.7599404893994,
+      "amortized_total_ms": 307244.2287419926,
+      "amortized_per_task_ms": 812.8154199523614,
+      "wall_ms": 307452.9024549993,
+      "peak_memory_mb": 1429.77197265625,
+      "entropy_info": {
+        "text": "fif sohreksvgi tebsu jizi bivuqsli yacli fvedomvgu xogwpzo jotvtzametc ligumfos qhizogsvig siq qejsxaq zah zeyiy pro xotl jilccebma re",
+        "n_tokens": 64,
+        "unique_tokens": 54,
+        "unique_ratio": 0.84375,
+        "seed": 0,
+        "attempts": 4,
+        "rejected_words_found": [
+          "tebuyald",
+          "hatr",
+          "momrawo",
+          "zaddkaqfo",
+          "vontzewybin",
+          "xarewyo",
+          "lgapit",
+          "rodkuqlfi",
+          "warlisphaf",
+          "bitbuddbicf",
+          "wesjyfuni"
+        ],
+        "decoded_sample": [
+          "f",
+          "if",
+          " so",
+          "h",
+          "re",
+          "ks",
+          "vg",
+          "i",
+          " te",
+          "bs"
+        ]
+      }
+    }
+  }
+}
