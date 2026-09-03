@@ -1,10 +1,9 @@
 """
 Analysis for the int4-mechanism ladder (docs/int4_mechanism.md), covering
 Rungs 1, 2, 3a, 3b, 4. Rung 3c (attention measurement) is analyzed separately
-by experiment-3/run_attention_probe.py, which writes its own numbers/plot.
+by experiments/attention_probe.py, which writes its own numbers/plot.
 
-Reuses wilson_ci and mcnemar_exact from scripts/analyze_quant_gap.py
-unchanged — no test statistic is reimplemented here.
+Test statistics come from tim.stats — no statistic is reimplemented here.
 
 Cells (condition_name -> file stem):
   int4_cold                 logs/quant_gap/Qwen_Qwen3-1.7B/gate/C_nf4_cold        (existing)
@@ -35,14 +34,12 @@ Usage:
 
 import json
 import statistics
-import sys
 from pathlib import Path
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(SCRIPTS_DIR))
-from analyze_quant_gap import wilson_ci, mcnemar_exact  # noqa: E402
+from tim.config import ROOT_DIR
+from tim.stats import mcnemar_exact, wilson_ci
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = ROOT_DIR
 LOGS = ROOT / "logs"
 OUT_DIR = LOGS / "int4_mechanism"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

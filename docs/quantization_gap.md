@@ -1,7 +1,7 @@
 # Quantization gap: can KV-cache priming recover accuracy that quantization removes?
 
 Companion study to the main TIM results in [README.md](../README.md). Runner:
-`experiment-3/run_quant_gap.py`. Analysis: `scripts/analyze_quant_gap.py`.
+`experiments/quant_gap.py`. Analysis: `scripts/analyze_quant_gap.py`.
 Raw outputs: `logs/quant_gap/`.
 
 ## Design
@@ -106,7 +106,7 @@ Qwen3-4B or Qwen3-8B rather than proceeding to the 2x2 on 1.7B.
 
 ## Files written
 
-- `experiment-3/run_quant_gap.py` — gate + full-2x2 runner.
+- `experiments/quant_gap.py` — gate + full-2x2 runner.
 - `scripts/analyze_quant_gap.py` — analysis (pass@1 table, damage/recovery,
   McNemar C vs D, overlap 2x2, docstring rate, timing) — reads whatever of
   gate/full exists and reports what's missing.

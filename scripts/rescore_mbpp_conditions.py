@@ -20,9 +20,8 @@ immediately and cleanly -- confirming the underlying sample data was never
 the problem.
 
 No regeneration is needed. This script simply re-invokes
-evaluate_with_evalplus (imported unchanged from run_quant_gap.py -- now
-hardened to hard-fail instead of silently continuing on a mismatch, see
-that module) *serially, one condition at a time*, against the existing
+evaluate_with_evalplus (imported from tim.evaluation, which hard-fails
+instead of silently continuing on a mismatch -- see that module) *serially, one condition at a time*, against the existing
 -sanitized.jsonl files, and merges the recovered pass@1_base /
 pass@1_base_plus_extra / n_scored / n_canonical fields into each
 condition's existing _metrics.json (every other field in that file, e.g.
@@ -34,15 +33,11 @@ Usage:
 """
 
 import json
-import sys
-from pathlib import Path
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-EXP3_DIR = ROOT_DIR / "experiment-3"
-sys.path.insert(0, str(EXP3_DIR))
-from run_quant_gap import evaluate_with_evalplus  # noqa: E402
+from tim.config import LOGS_DIR, ROOT_DIR
+from tim.evaluation import evaluate_with_evalplus
 
-MBPP_DIR = ROOT_DIR / "logs" / "mbpp_scale"
+MBPP_DIR = LOGS_DIR / "mbpp_scale"
 
 # Conditions Step 1 flagged as "NOT SCORED" (complete raw+sanitized, no
 # eval_results.json) -- see logs/mbpp_scale/coverage_report.json.

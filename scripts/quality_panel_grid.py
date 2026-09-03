@@ -26,12 +26,8 @@ Usage:
 """
 
 import json
-import sys
-from pathlib import Path
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(SCRIPTS_DIR))
-import quality_panel as qp  # noqa: E402
+import quality_panel as qp  # sibling module; scripts/ is on sys.path as the script dir
 
 ROOT = qp.ROOT
 QUALITY_QUANT_DIR = ROOT / "logs" / "quality_quant"

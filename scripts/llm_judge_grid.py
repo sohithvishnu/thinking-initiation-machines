@@ -26,19 +26,21 @@ Usage:
 
 import argparse
 import json
-import sys
-from pathlib import Path
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(SCRIPTS_DIR))
-from llm_judge import (  # noqa: E402
-    get_model_tag, query_judge, JUDGE_PROMPT,
-    load_solutions, load_eval_results, both_pass_set,
-)
 from evalplus.data import get_human_eval_plus  # noqa: E402
 from scipy.stats import binomtest  # noqa: E402
 
-ROOT = Path(__file__).resolve().parent.parent
+from llm_judge import (
+    JUDGE_PROMPT,
+    both_pass_set,
+    get_model_tag,
+    load_eval_results,
+    load_solutions,
+    query_judge,
+)
+from tim.config import ROOT_DIR
+
+ROOT = ROOT_DIR
 QUALITY_QUANT_DIR = ROOT / "logs" / "quality_quant"
 QUALITY_QUANT_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_PATH = QUALITY_QUANT_DIR / "judge_raw.jsonl"

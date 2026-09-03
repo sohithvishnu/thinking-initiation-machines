@@ -28,14 +28,12 @@ Usage:
 """
 
 import json
-import sys
 from collections import Counter
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT_DIR))
-
 from evalplus.data import get_mbpp_plus, load_solutions  # noqa: E402
+
+from tim.config import ROOT_DIR
 
 MBPP_DIR = ROOT_DIR / "logs" / "mbpp_scale"
 OUT_PATH = MBPP_DIR / "coverage_report.json"
@@ -128,9 +126,9 @@ def classify(raw_path: Path, canonical: set):
 
 def main():
     canonical = canonical_task_ids()
-    print(f"=== MBPP+ coverage diagnosis ===")
+    print("=== MBPP+ coverage diagnosis ===")
     print(f"Canonical MBPP+ task count (this evalplus install, get_mbpp_plus()): {len(canonical)}")
-    print(f"(Not assumed to be 378 or 399 -- this is what the installed evalplus actually returns.)\n")
+    print("(Not assumed to be 378 or 399 -- this is what the installed evalplus actually returns.)\n")
 
     conditions = find_conditions(MBPP_DIR)
     report = {"n_canonical": len(canonical), "conditions": {}}

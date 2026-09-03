@@ -1,5 +1,21 @@
-experiment-2/models
+# Local HuggingFace snapshot mirror — tens of GB, never committed.
 models/
-__pycache__
+
+# Secrets
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling / editors
 .idea/
+.vscode/
+.ruff_cache/
+.pytest_cache/
+.DS_Store

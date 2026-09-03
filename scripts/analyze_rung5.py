@@ -17,14 +17,11 @@ Usage:
 
 import json
 import statistics
-import sys
-from pathlib import Path
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(SCRIPTS_DIR))
-from analyze_quant_gap import wilson_ci, mcnemar_exact, load_eval_results  # noqa: E402
+from tim.config import ROOT_DIR
+from tim.stats import load_eval_results, mcnemar_exact, wilson_ci
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = ROOT_DIR
 LOGS = ROOT / "logs"
 OUT_DIR = LOGS / "int4_mechanism"
 DOCS_DIR = ROOT / "docs"
@@ -122,7 +119,7 @@ def main():
         return
 
     if not entropy_evals:
-        print("FATAL: no tim_entropy eval results found — run experiment-3/run_rung5_entropy.py first.")
+        print("FATAL: no tim_entropy eval results found — run experiments/rung5_entropy.py first.")
         return
 
     # ====================================================================

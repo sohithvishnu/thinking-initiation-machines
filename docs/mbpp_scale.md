@@ -3,7 +3,7 @@
 Qwen3-1.7B, MBPP+ (this evalplus install's canonical set — **N=378**, not
 399; see "Coverage bug" below), greedy decoding, `enable_thinking=False`,
 `max_new_tokens=768`. Two physical GPUs ran this batch concurrently
-(`run_mbpp_scale_gpu0.sh` / `run_mbpp_scale_gpu1.sh`).
+(`experiments/run_mbpp_scale_gpu0.sh` / `experiments/run_mbpp_scale_gpu1.sh`).
 
 This run exists to test one question: **does the int4 capacity-rescue effect
 found on HumanEval+ (N=164: int4-cold 51.2% → int4-tim_domain 56.7/57.9/60.4%
@@ -48,7 +48,8 @@ the exact bytes already on disk — succeeded immediately and cleanly
 (378/378, `pass@1: 0.579` / `pass@1: 0.492`). The sample data was never the
 problem.
 
-**Root cause:** `evalplus.evaluate.get_groundtruth()` caches its expensive
+**Root cause (superseded — see the correction below):**
+`evalplus.evaluate.get_groundtruth()` caches its expensive
 ground-truth computation to a single pickle file keyed by dataset hash
 (`~/.cache/evalplus/<hash>.pkl`) via a plain `open(path, "wb"); pickle.dump(...)`
 — no lock, no atomic temp-file-then-rename. This was the *first-ever* MBPP+
@@ -60,9 +61,54 @@ failures under contention — confirmed random/transient (Step 2 verdict **(c)**
 not (a) truncation, not (b) a parsing bug), and confirmed harmless to the
 underlying sample data.
 
+> **Correction (found during the repository packaging pass).** The
+> concurrency diagnosis above is wrong. The real cause was a dataset argument
+> that never reached `run_condition`.
+>
+> MBPP support was retrofitted onto the experiment-3 scripts by a set of
+> throwaway regex patchers (the old `fixes/` directory). One of them added
+> `dataset=args.dataset` to every `run_condition(` call using the pattern
+> `run_condition\((.*?task_items),`. That regex is not `DOTALL`, so it matched
+> only calls whose opening line already contained `task_items` — the
+> single-line calls. Every multi-line call was silently skipped and kept the
+> `dataset="humaneval"` default, so its MBPP+ completions were scored against
+> the HumanEval task set, `evalplus.evaluate` failed its internal
+> `assert len(completion_id) == len(problems)`, and no `eval_results.json` was
+> written.
+>
+> Seven call sites were left unpatched: the B and D loops in `run_full`, all
+> four calls in `run_int4_mechanism.py`, and the single call in
+> `run_rung5_entropy.py`. What the two GPU scripts actually exercised over
+> MBPP+ adds up to exactly the seven broken conditions listed above — B at
+> passes 1, 2 and 3 (3), D once (1), rungs 2 and 3b (2), and rung 5 seed 0
+> (1) — with nothing left over. Every condition that scored cleanly (`A`,
+> `C`, `F`, `int4_tim_domain_seed*`) came from a patched, single-line call
+> site.
+>
+> This also explains the Step 2 evidence read as decisive against a
+> content/condition-correlated cause: `F_nf4_prompt_control` and
+> `int4_prompt_control` are the same *condition* but two different *call
+> sites*, one patched and one not. "Same condition" did not imply "same code
+> path."
+>
+> And the re-score below succeeded because it passes `dataset="mbpp"`
+> explicitly — not because it ran serially. Serial execution was a coincidental
+> confound.
+>
+> **Nothing about the reported numbers changes.** Every affected condition was
+> re-scored against the correct dataset over the same untouched sanitized
+> files, and the sample data was never in question. What changes is the
+> attribution: this was a deterministic argument-passing bug, not
+> non-reproducible scoring contention.
+>
+> Fixed structurally rather than by patching: `dataset` is now a required
+> keyword-only argument of `tim.evaluation.run_condition`, so a call site that
+> omits it raises a `TypeError` at once instead of silently scoring against
+> the wrong benchmark.
+
 **Fix (Step 3).** No regeneration was needed — the raw and sanitized data
 were already complete and correct. `scripts/rescore_mbpp_conditions.py`
-re-ran `evaluate_with_evalplus` (imported unchanged from `run_quant_gap.py`)
+re-ran `evaluate_with_evalplus` (now imported from `tim.evaluation`)
 **serially**, one condition at a time, against the existing sanitized files.
 All 7 re-scored cleanly, 378/378, on the first attempt:
 
@@ -76,7 +122,7 @@ All 7 re-scored cleanly, 378/378, on the first attempt:
 | full/B_bf16_tim_domain_seed0 (pass3) | 0.561 | 0.484 |
 | full/D_nf4_tim_domain_seed0 | 0.574 | 0.484 |
 
-**Harness hardening.** `experiment-3/run_quant_gap.py`'s `evaluate_with_evalplus`
+**Harness hardening.** `experiments/quant_gap.py`'s `evaluate_with_evalplus`
 previously caught a non-zero evalplus exit with a printed `WARNING` and then
 *silently continued*, merging an empty scores dict and letting the run
 proceed — this is exactly how the 7 broken conditions ended up looking like
@@ -230,8 +276,8 @@ not a trend.)
 
 The same nominal condition (nf4 + tim_domain + seed0 + pass1) was generated
 independently twice, by two different scripts on two different GPU processes:
-`int4_tim_domain_seed0` (GPU1, `run_int4_tim_domain.py`, 47.1%) and
-`full/D_nf4_tim_domain_seed0` (GPU0, `run_quant_gap.py`'s `run_full()`,
+`int4_tim_domain_seed0` (GPU1, `int4_tim_domain.py`, 47.1%) and
+`full/D_nf4_tim_domain_seed0` (GPU0, `quant_gap.py`'s `run_full()`,
 48.4%). Discordant 14/19, McNemar **p=0.4869** — not significant; the two
 independent NF4 model loads produce output that differs task-by-task more
 than a single model's own repeated-generation determinism check would (each
@@ -332,7 +378,7 @@ HumanEval+ pattern) adds further latency on top.
 - `scripts/rescore_mbpp_conditions.py` — Step 3 serial re-scoring fix.
 - `scripts/analyze_mbpp_scale.py` — Step 4 analysis (extended from the
   pre-existing draft; McNemar tests, dose-response, echo test, answers dump).
-- `experiment-3/run_quant_gap.py` — `evaluate_with_evalplus` hardened to
+- `experiments/quant_gap.py` — `evaluate_with_evalplus` hardened to
   hard-fail instead of silently continuing on a scoring mismatch.
 - `logs/mbpp_scale/coverage_report.json` — full per-condition coverage detail.
 - `logs/mbpp_scale/rescore_report.json` — re-scoring outcomes for the 7

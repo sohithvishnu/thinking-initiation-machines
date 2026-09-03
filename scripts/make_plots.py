@@ -1,6 +1,6 @@
 """
 Generate the result figures used in README.md from the real log JSON/JSONL
-files under logs/ and experiment-2/logs/. No numbers are hardcoded here —
+files under logs/. No numbers are hardcoded here —
 everything is parsed from the committed run artifacts. If a source file is
 missing, the corresponding figure is skipped and reported at the end.
 
@@ -13,19 +13,20 @@ import re
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parent.parent
-FIG_DIR = ROOT / "docs" / "figures"
+from tim.config import FIGURES_DIR, LOGS_DIR, ROOT_DIR
+from tim.stats import DOCSTRING_RE
+
+FIG_DIR = FIGURES_DIR
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-BASELINE_SUMMARY = ROOT / "logs" / "evalplus_baseline" / "combined_paper_summary.json"
-MAIN_EXPERIMENT = ROOT / "logs" / "tim" / "all_models_combined_results.json"
-PASS_SWEEP_DIR = ROOT / "experiment-2" / "logs" / "tim_passes" / "Qwen_Qwen3-1.7B"
+BASELINE_SUMMARY = LOGS_DIR / "evalplus_baseline" / "combined_paper_summary.json"
+MAIN_EXPERIMENT = LOGS_DIR / "tim" / "all_models_combined_results.json"
+PASS_SWEEP_DIR = LOGS_DIR / "tim_passes" / "Qwen_Qwen3-1.7B"
 PASS_SWEEP_FILE = PASS_SWEEP_DIR / "sweep_results.json"
-
-DOCSTRING_RE = re.compile(r'def\s+\w+\([^)]*\)[^:]*:\s*\n\s*("""|\'\'\')')
 
 MODEL_ORDER = ["Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B", "Qwen/Qwen3-8B"]
 MODEL_SHORT = {m: m.split("/")[-1] for m in MODEL_ORDER}
@@ -35,7 +36,7 @@ made = []
 
 
 def note_missing(path, figure_name):
-    missing.append(f"{figure_name}: missing source file {path.relative_to(ROOT)}")
+    missing.append(f"{figure_name}: missing source file {path.relative_to(ROOT_DIR)}")
     print(f"SKIP {figure_name}: {path} not found")
 
 
@@ -117,9 +118,9 @@ def plot_conditions_by_model():
         vals = [v * 100 if v is not None else 0 for v in rows[c]]
         offset = (i - 1.5) * width
         color = "tab:orange" if c == "prompt_control" else None
-        bars = ax.bar([xi + offset for xi in x], vals, width, label=c, color=color,
-                       edgecolor="black" if c == "prompt_control" else None,
-                       linewidth=1.5 if c == "prompt_control" else 0)
+        ax.bar([xi + offset for xi in x], vals, width, label=c, color=color,
+               edgecolor="black" if c == "prompt_control" else None,
+               linewidth=1.5 if c == "prompt_control" else 0)
     ax.set_xticks(list(x))
     ax.set_xticklabels(labels)
     ax.set_ylabel("HumanEval+ pass@1 (%)")
@@ -240,7 +241,7 @@ def plot_tokens_vs_accuracy():
     for label, pts in groups.items():
         if not pts:
             continue
-        xs, ys = zip(*pts)
+        xs, ys = zip(*pts, strict=True)
         size = 160 if label in ("cold", "prompt_control") else 60
         ax.scatter(xs, ys, label=label, marker=markers[label], s=size)
 
@@ -285,13 +286,13 @@ def plot_docstring_rate():
     fig, ax = plt.subplots(figsize=(5.5, 4.5))
     bars = ax.bar(["prompt_control", "tim_domain_p12"], [rate_pc, rate_td],
                    color=["tab:orange", "tab:blue"])
-    for b, (d, n) in zip(bars, [(d_pc, n_pc), (d_td, n_td)]):
+    for b, (d, n) in zip(bars, [(d_pc, n_pc), (d_td, n_td)], strict=True):
         ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 1.5,
                 f"{d}/{n} = {b.get_height():.1f}%", ha="center", fontsize=9)
     ax.set_ylabel("docstring reproduction rate (%)")
     ax.set_ylim(0, 65)
-    ax.set_title("Docstring reproduction rate\n(+%.1f pp, z=%.2f, p≈2×10⁻¹⁰)"
-                 % (rate_td - rate_pc, 6.36))
+    ax.set_title(f"Docstring reproduction rate\n"
+                 f"(+{rate_td - rate_pc:.1f} pp, z={6.36:.2f}, p≈2×10⁻¹⁰)")
     fig.tight_layout()
     fig.savefig(FIG_DIR / fig_name, dpi=150)
     plt.close(fig)
@@ -326,7 +327,7 @@ def plot_mcnemar():
 
     table = [[both_pass, prompt_only], [tim_only, both_fail]]
     fig, ax = plt.subplots(figsize=(5.5, 5))
-    im = ax.imshow(table, cmap="Blues")
+    ax.imshow(table, cmap="Blues")
     ax.set_xticks([0, 1])
     ax.set_xticklabels(["tim_domain_p12 pass", "tim_domain_p12 fail"])
     ax.set_yticks([0, 1])

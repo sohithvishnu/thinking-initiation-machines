@@ -39,13 +39,14 @@ import difflib
 import json
 import statistics
 import subprocess
-import sys
 import tempfile
 from pathlib import Path
 
 from evalplus.data import get_human_eval_plus
 
-ROOT = Path(__file__).resolve().parent.parent
+from tim.config import ROOT_DIR
+
+ROOT = ROOT_DIR
 QUALITY_DIR = ROOT / "logs" / "quality"
 QUALITY_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -194,9 +195,9 @@ def ast_metrics(code: str, entry_point: str, prompt_doc):
 
 
 def radon_metrics(code: str):
-    from radon.raw import analyze
     from radon.complexity import cc_visit
     from radon.metrics import mi_visit
+    from radon.raw import analyze
 
     out = {"sloc": None, "comments": None, "comment_density": None,
            "cyclomatic_complexity": None, "maintainability_index": None}
@@ -328,6 +329,7 @@ def wilcoxon_p(xs, ys):
     if len(xs) < 2:
         return None
     import math
+
     from scipy.stats import wilcoxon
     try:
         stat, p = wilcoxon(xs, ys)
@@ -464,7 +466,8 @@ def main():
         n_parse_err = sum(1 for m in metrics[name].values() if m.get("parse_error"))
         print(f"  {name:<20}: done ({n_parse_err} parse errors)")
 
-    print_header = lambda t: print("\n" + "=" * 100 + f"\n{t}\n" + "=" * 100)
+    def print_header(title):
+        print("\n" + "=" * 100 + f"\n{title}\n" + "=" * 100)
 
     print_header("EvalPlus fragile rate (base pass, plus fail) — FULL 164, per condition")
     fragile = {}

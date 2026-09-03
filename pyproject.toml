@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thinking-initiation-machines"
+version = "0.1.0"
+description = "Inference-time latent conditioning via KV-cache priming"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Sohith Vishnu Sai Yachamaneni" }]
+keywords = ["kv-cache", "prefix-tuning", "llm", "inference", "humaneval", "evalplus"]
+
+dependencies = [
+    "torch>=2.4",
+    "transformers>=4.44",
+    "accelerate>=0.33",
+    "huggingface_hub>=0.24",
+    "evalplus>=0.3",
+    "tqdm>=4.66",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+# 4-bit arms (experiments/quant_gap.py and the whole int4-mechanism ladder).
+quant = ["bitsandbytes>=0.43"]
+# Figures, significance tests, and the code-quality panel.
+analysis = [
+    "matplotlib>=3.8",   # scripts/make_plots.py
+    "scipy>=1.11",       # exact McNemar / binomial tests in tim.stats
+    "ruff>=0.5",         # lint metric in the code-quality panel
+    "radon>=6.0",        # complexity / raw metrics in the code-quality panel
+    "requests>=2.31",    # Ollama HTTP API in scripts/llm_judge*.py
+]
+dev = ["ruff>=0.5"]
+
+[project.scripts]
+tim-audit = "tim.audit:main"
+tim-download-models = "tim.models:get_models"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "experiments", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = [
+    "E501",  # long lines are mostly prose in docstrings
+    "E402",  # matplotlib.use("Agg") must precede pyplot import
+]

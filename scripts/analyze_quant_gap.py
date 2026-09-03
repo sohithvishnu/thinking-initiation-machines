@@ -1,8 +1,8 @@
 """
-Analysis for the quantization-recovery study (experiment-3/run_quant_gap.py).
+Analysis for the quantization-recovery study (experiments/quant_gap.py).
 
 Reads the *-sanitized.eval_results.json and *_metrics.json files written by
-run_quant_gap.py under logs/quant_gap/<model>/{gate,full}/ and prints:
+quant_gap.py under logs/quant_gap/<model>/{gate,full}/ and prints:
 
   1. The 2x2 (+ prompt_control) table of HumanEval / HumanEval+ pass@1, each
      with a Wilson 95% CI; TIM arms (B, D) as mean +/- std across seeds.
@@ -27,83 +27,26 @@ Usage:
 
 import argparse
 import json
-import math
-import re
 import statistics
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-QUANT_GAP_DIR = ROOT / "logs" / "quant_gap"
+from tim.config import LOGS_DIR
+from tim.stats import (
+    base_pass_count,
+    docstring_rate,
+    load_eval_results,
+    mcnemar_exact,
+    plus_pass_count,
+    wilson_ci,
+)
 
-DOCSTRING_RE = re.compile(r'def\s+\w+\([^)]*\)[^:]*:\s*\n\s*("""|\'\'\')')
+QUANT_GAP_DIR = LOGS_DIR / "quant_gap"
 
 MISSING = []  # (description, expected_path) — reported at the end
 
 
 def note_missing(description: str, path: Path):
     MISSING.append((description, str(path)))
-
-
-def wilson_ci(k: int, n: int, z: float = 1.959963985):
-    if n == 0:
-        return 0.0, 0.0, 0.0
-    p = k / n
-    denom = 1 + z * z / n
-    center = (p + z * z / (2 * n)) / denom
-    half = (z * math.sqrt((p * (1 - p) + z * z / (4 * n)) / n)) / denom
-    return p, max(0.0, center - half), min(1.0, center + half)
-
-
-def mcnemar_exact(b: int, c: int):
-    """Exact McNemar (binomial test on discordant pairs). Returns (b, c, p)."""
-    from scipy.stats import binomtest
-    n = b + c
-    if n == 0:
-        return b, c, 1.0
-    p = binomtest(min(b, c), n, 0.5).pvalue
-    return b, c, p
-
-
-def load_eval_results(path: Path):
-    """Returns {task_id: {'base_pass': bool, 'plus_pass': bool}} or None if missing."""
-    if not path.exists():
-        return None
-    with open(path) as f:
-        d = json.load(f)
-    tasks = {}
-    for task_id, entries in d["eval"].items():
-        e = entries[0]
-        tasks[task_id] = {
-            "base_pass": e["base_status"] == "pass",
-            "plus_pass": e["plus_status"] == "pass",
-        }
-    return tasks
-
-
-def plus_pass_count(tasks: dict) -> int:
-    return sum(1 for t in tasks.values() if t["base_pass"] and t["plus_pass"])
-
-
-def base_pass_count(tasks: dict) -> int:
-    return sum(1 for t in tasks.values() if t["base_pass"])
-
-
-def docstring_rate(sanitized_jsonl: Path):
-    if not sanitized_jsonl.exists():
-        return None
-    n = d = 0
-    for line in sanitized_jsonl.read_text().splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            sol = json.loads(line)["solution"]
-        except (json.JSONDecodeError, KeyError):
-            continue
-        n += 1
-        if DOCSTRING_RE.search(sol):
-            d += 1
-    return d, n
 
 
 def load_metrics(output_dir: Path, condition_name: str):

@@ -472,12 +472,12 @@ Analysis:
 - `logs/int4_mechanism/answers_rung{1,2,3,4,5}.jsonl` (per-task side-by-side diffs)
 
 Attention probe (Rung 3c):
-- `experiment-3/run_attention_probe.py`
+- `experiments/attention_probe.py`
 - `logs/int4_mechanism/attention_probe_raw.json`
 - `docs/figures/attention_sink_int4_vs_bf16.png`
 
 Generation code:
-- `experiment-3/run_int4_mechanism.py` (Rungs 2, 3a, 3b, 4; `--rungs` flag
+- `experiments/int4_mechanism.py` (Rungs 2, 3a, 3b, 4; `--rungs` flag
   allows splitting work across GPUs as separate processes)
 
 ## Expected but not found

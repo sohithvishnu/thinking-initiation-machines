@@ -24,14 +24,14 @@ Usage:
 
 import argparse
 import json
-import re
-import sys
 from pathlib import Path
 
 import requests
 from evalplus.data import get_human_eval_plus
 
-ROOT = Path(__file__).resolve().parent.parent
+from tim.config import ROOT_DIR
+
+ROOT = ROOT_DIR
 QUALITY_DIR = ROOT / "logs" / "quality"
 QUALITY_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_PATH = QUALITY_DIR / "judge_raw.jsonl"
