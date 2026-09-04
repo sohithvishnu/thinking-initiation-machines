@@ -77,6 +77,16 @@ class TIMPrimer:
                     out.append(tid)
         return torch.tensor(out, device=self.device, dtype=torch.long)
 
+    def _sample_excluding_special_seeded(self, gen: torch.Generator, n: int) -> torch.Tensor:
+        """Sample n token IDs uniformly under a seeded generator, rejecting special tokens."""
+        ids = torch.randint(0, self.vocab_size, (n,), generator=gen, device=self.device)
+        mask = torch.tensor([t.item() in self._excluded_ids for t in ids])
+        while mask.any():
+            resample = torch.randint(0, self.vocab_size, (int(mask.sum()),), generator=gen, device=self.device)
+            ids[mask] = resample
+            mask = torch.tensor([t.item() in self._excluded_ids for t in ids])
+        return ids
+
     def get_domain_token_ids(self, domain: str) -> list[int]:
         """Tokenize the domain string (and its whitespace-split words) into
         a small pool of real token IDs to seed domain-weighted noise."""
@@ -122,13 +132,7 @@ class TIMPrimer:
 
         if not domain_tokens:
             if gen is not None:
-                ids = torch.randint(0, self.vocab_size, (n,), generator=gen, device=self.device)
-                # simple rejection pass for special tokens under a fixed seed
-                mask = torch.tensor([t.item() in self._excluded_ids for t in ids])
-                while mask.any():
-                    resample = torch.randint(0, self.vocab_size, (int(mask.sum()),), generator=gen, device=self.device)
-                    ids[mask] = resample
-                    mask = torch.tensor([t.item() in self._excluded_ids for t in ids])
+                ids = self._sample_excluding_special_seeded(gen, n)
             else:
                 ids = self._sample_excluding_special(n)
         else:
@@ -138,7 +142,7 @@ class TIMPrimer:
             if gen is not None:
                 domain_idx = torch.randint(0, len(dt), (n_domain,), generator=gen, device=self.device)
                 domain_sample = dt[domain_idx]
-                random_sample = torch.randint(0, self.vocab_size, (n_random,), generator=gen, device=self.device)
+                random_sample = self._sample_excluding_special_seeded(gen, n_random)
             else:
                 domain_sample = dt[torch.randint(0, len(dt), (n_domain,), device=self.device)]
                 random_sample = self._sample_excluding_special(n_random)
@@ -250,7 +254,9 @@ class TIMPrimer:
 
             if self.chain_mode == "reseed":
                 # Inject a fresh noise chunk before this pass's thinking.
-                pass_seed = None if seed is None else seed * 1000 + _pass
+                # Multiplier must exceed num_passes, else e.g. seed=0 pass=1
+                # collides with seed=1's initial draw (both give 1).
+                pass_seed = None if seed is None else seed * 1_000_000 + _pass
                 fresh = self.generate_vocabulary_noise(domain_tokens, seed=pass_seed)
                 logits, kv = self._forward_with_kv(fresh, past_key_values=kv)
 
