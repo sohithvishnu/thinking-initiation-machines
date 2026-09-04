@@ -1,0 +1,177 @@
+{
+  "pass_table": {
+    "cold": {
+      "n": 20,
+      "n_base": 20,
+      "n_plus": 19,
+      "pass@1_base": 1.0,
+      "pass@1_base_plus_extra": 0.95
+    },
+    "tim_unconstrained": {
+      "n": 20,
+      "n_base": 19,
+      "n_plus": 18,
+      "pass@1_base": 0.95,
+      "pass@1_base_plus_extra": 0.9
+    },
+    "tim_locked": {
+      "n": 20,
+      "n_base": 0,
+      "n_plus": 0,
+      "pass@1_base": 0.0,
+      "pass@1_base_plus_extra": 0.0
+    },
+    "cold_locked_random": {
+      "n": 20,
+      "n_base": 0,
+      "n_plus": 0,
+      "pass@1_base": 0.0,
+      "pass@1_base_plus_extra": 0.0
+    }
+  },
+  "contrasts": {
+    "tim_locked_vs_cold": {
+      "a": "tim_locked",
+      "b": "cold",
+      "tim_locked_wins": 0,
+      "cold_wins": 19,
+      "tie_pass": 0,
+      "tie_fail": 1,
+      "n_discordant": 19,
+      "exact_binomial_p": 3.814697265625e-06,
+      "per_task": {
+        "HumanEval/0": "cold_wins",
+        "HumanEval/1": "cold_wins",
+        "HumanEval/2": "cold_wins",
+        "HumanEval/3": "cold_wins",
+        "HumanEval/4": "cold_wins",
+        "HumanEval/5": "cold_wins",
+        "HumanEval/6": "cold_wins",
+        "HumanEval/7": "cold_wins",
+        "HumanEval/8": "cold_wins",
+        "HumanEval/9": "cold_wins",
+        "HumanEval/10": "cold_wins",
+        "HumanEval/11": "cold_wins",
+        "HumanEval/12": "cold_wins",
+        "HumanEval/13": "cold_wins",
+        "HumanEval/14": "cold_wins",
+        "HumanEval/15": "tie_fail",
+        "HumanEval/16": "cold_wins",
+        "HumanEval/17": "cold_wins",
+        "HumanEval/18": "cold_wins",
+        "HumanEval/19": "cold_wins"
+      },
+      "note": "exploratory \u2014 N=20 is a probe, not a powered test"
+    },
+    "tim_locked_vs_tim_unconstrained": {
+      "a": "tim_locked",
+      "b": "tim_unconstrained",
+      "tim_locked_wins": 0,
+      "tim_unconstrained_wins": 18,
+      "tie_pass": 0,
+      "tie_fail": 2,
+      "n_discordant": 18,
+      "exact_binomial_p": 7.62939453125e-06,
+      "per_task": {
+        "HumanEval/0": "tim_unconstrained_wins",
+        "HumanEval/1": "tim_unconstrained_wins",
+        "HumanEval/2": "tim_unconstrained_wins",
+        "HumanEval/3": "tim_unconstrained_wins",
+        "HumanEval/4": "tim_unconstrained_wins",
+        "HumanEval/5": "tim_unconstrained_wins",
+        "HumanEval/6": "tie_fail",
+        "HumanEval/7": "tim_unconstrained_wins",
+        "HumanEval/8": "tim_unconstrained_wins",
+        "HumanEval/9": "tim_unconstrained_wins",
+        "HumanEval/10": "tim_unconstrained_wins",
+        "HumanEval/11": "tim_unconstrained_wins",
+        "HumanEval/12": "tim_unconstrained_wins",
+        "HumanEval/13": "tim_unconstrained_wins",
+        "HumanEval/14": "tim_unconstrained_wins",
+        "HumanEval/15": "tie_fail",
+        "HumanEval/16": "tim_unconstrained_wins",
+        "HumanEval/17": "tim_unconstrained_wins",
+        "HumanEval/18": "tim_unconstrained_wins",
+        "HumanEval/19": "tim_unconstrained_wins"
+      },
+      "note": "exploratory \u2014 N=20 is a probe, not a powered test"
+    },
+    "tim_locked_vs_cold_locked_random": {
+      "a": "tim_locked",
+      "b": "cold_locked_random",
+      "tim_locked_wins": 0,
+      "cold_locked_random_wins": 0,
+      "tie_pass": 0,
+      "tie_fail": 20,
+      "n_discordant": 0,
+      "exact_binomial_p": null,
+      "per_task": {
+        "HumanEval/0": "tie_fail",
+        "HumanEval/1": "tie_fail",
+        "HumanEval/2": "tie_fail",
+        "HumanEval/3": "tie_fail",
+        "HumanEval/4": "tie_fail",
+        "HumanEval/5": "tie_fail",
+        "HumanEval/6": "tie_fail",
+        "HumanEval/7": "tie_fail",
+        "HumanEval/8": "tie_fail",
+        "HumanEval/9": "tie_fail",
+        "HumanEval/10": "tie_fail",
+        "HumanEval/11": "tie_fail",
+        "HumanEval/12": "tie_fail",
+        "HumanEval/13": "tie_fail",
+        "HumanEval/14": "tie_fail",
+        "HumanEval/15": "tie_fail",
+        "HumanEval/16": "tie_fail",
+        "HumanEval/17": "tie_fail",
+        "HumanEval/18": "tie_fail",
+        "HumanEval/19": "tie_fail"
+      },
+      "note": "exploratory \u2014 N=20 is a probe, not a powered test"
+    }
+  },
+  "behavioral": {
+    "cold": {
+      "mean_tokens": 164.55,
+      "min_tokens": 83,
+      "max_tokens": 308,
+      "n_hit_max_new_tokens_768": 0,
+      "docstring_rate": 1.0,
+      "n_docstring": 20,
+      "n_total": 20
+    },
+    "tim_unconstrained": {
+      "mean_tokens": 199.8,
+      "min_tokens": 83,
+      "max_tokens": 768,
+      "n_hit_max_new_tokens_768": 1,
+      "docstring_rate": 0.95,
+      "n_docstring": 19,
+      "n_total": 20
+    },
+    "tim_locked": {
+      "mean_tokens": 768.0,
+      "min_tokens": 768,
+      "max_tokens": 768,
+      "n_hit_max_new_tokens_768": 20,
+      "docstring_rate": 0.3,
+      "n_docstring": 6,
+      "n_total": 20
+    },
+    "cold_locked_random": {
+      "mean_tokens": 768.0,
+      "min_tokens": 768,
+      "max_tokens": 768,
+      "n_hit_max_new_tokens_768": 20,
+      "docstring_rate": 0.3,
+      "n_docstring": 6,
+      "n_total": 20
+    }
+  },
+  "verdict": {
+    "degrades_relative_to_unconstrained": true,
+    "locked_equals_random_lock": true,
+    "locked_beats_random_lock": false,
+    "interpretation": "Degrades, and indistinguishable from locking to a random expert set: the damage comes from constraining the router to ANY fixed expert set, not from priming's particular (off-task, per Q2) choice."
+  }
+}
