@@ -56,9 +56,9 @@ from moe_router_probe import (  # noqa: E402
 )
 
 ROOT_DIR = TIM_MOE_DIR.parent
-EXP2_DIR = ROOT_DIR / "experiment-2"
-sys.path.insert(0, str(EXP2_DIR))
-from tim_primer import TIMPrimer  # noqa: E402
+SRC_DIR = ROOT_DIR / "src"
+sys.path.insert(0, str(SRC_DIR))
+from tim.primer import TIMPrimer  # noqa: E402
 
 PROBE_LOGS = TIM_MOE_DIR / "logs" / "moe_probe"
 LOCK_LOGS = TIM_MOE_DIR / "logs" / "moe_lock"

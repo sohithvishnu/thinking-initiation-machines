@@ -94,15 +94,13 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 TIM_MOE_DIR = Path(__file__).resolve().parent
 ROOT_DIR = TIM_MOE_DIR.parent
-EXP2_DIR = ROOT_DIR / "experiment-2"
+SRC_DIR = ROOT_DIR / "src"
 
 load_dotenv(dotenv_path=str(ROOT_DIR / ".env"))
 
-sys.path.insert(0, str(ROOT_DIR))
-from utils import download_model, model_path_for  # noqa: E402
-
-sys.path.insert(0, str(EXP2_DIR))
-from tim_primer import TIMPrimer  # noqa: E402
+sys.path.insert(0, str(SRC_DIR))
+from tim.models import download_model, model_path_for  # noqa: E402
+from tim.primer import TIMPrimer  # noqa: E402
 
 LOGS_DIR = TIM_MOE_DIR / "logs" / "moe_probe"
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
