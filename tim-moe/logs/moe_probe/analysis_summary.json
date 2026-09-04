@@ -1,0 +1,440 @@
+{
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "q1_router_shift": {
+    "tim_domain": {
+      "per_layer": {
+        "0": {
+          "jaccard_mean": 0.9587601409768913,
+          "kl_mean": 0.004958361671774745,
+          "n_tasks": 20
+        },
+        "1": {
+          "jaccard_mean": 0.9788318452380953,
+          "kl_mean": 0.0023984324213127605,
+          "n_tasks": 20
+        },
+        "2": {
+          "jaccard_mean": 0.9452534979465692,
+          "kl_mean": 0.0022618660273835602,
+          "n_tasks": 20
+        },
+        "3": {
+          "jaccard_mean": 0.9458030159745672,
+          "kl_mean": 0.0029932743755411153,
+          "n_tasks": 20
+        },
+        "4": {
+          "jaccard_mean": 0.900286487364706,
+          "kl_mean": 0.003457658895220974,
+          "n_tasks": 20
+        },
+        "5": {
+          "jaccard_mean": 0.8947197979065085,
+          "kl_mean": 0.0024488738602776424,
+          "n_tasks": 20
+        },
+        "6": {
+          "jaccard_mean": 0.8978138635328886,
+          "kl_mean": 0.003039600407374553,
+          "n_tasks": 20
+        },
+        "7": {
+          "jaccard_mean": 0.8948101638069421,
+          "kl_mean": 0.0043978466800434326,
+          "n_tasks": 20
+        },
+        "8": {
+          "jaccard_mean": 0.876112149971245,
+          "kl_mean": 0.005414950818567895,
+          "n_tasks": 20
+        },
+        "9": {
+          "jaccard_mean": 0.8971219776737211,
+          "kl_mean": 0.0070870220379152925,
+          "n_tasks": 20
+        },
+        "10": {
+          "jaccard_mean": 0.9086479319579558,
+          "kl_mean": 0.009304366770039872,
+          "n_tasks": 20
+        },
+        "11": {
+          "jaccard_mean": 0.8904191809274205,
+          "kl_mean": 0.010962806171119234,
+          "n_tasks": 20
+        },
+        "12": {
+          "jaccard_mean": 0.9027669702943666,
+          "kl_mean": 0.013611359889009467,
+          "n_tasks": 20
+        },
+        "13": {
+          "jaccard_mean": 0.8975130855810821,
+          "kl_mean": 0.01661724606480328,
+          "n_tasks": 20
+        },
+        "14": {
+          "jaccard_mean": 0.9048272043401733,
+          "kl_mean": 0.010888080269380884,
+          "n_tasks": 20
+        },
+        "15": {
+          "jaccard_mean": 0.8912150056891603,
+          "kl_mean": 0.013768496509000782,
+          "n_tasks": 20
+        }
+      },
+      "overall_jaccard_mean": 0.9115563949488933,
+      "overall_kl_mean": 0.007100640179297843
+    },
+    "tim_random": {
+      "per_layer": {
+        "0": {
+          "jaccard_mean": 0.9559112189737521,
+          "kl_mean": 0.00537674471365272,
+          "n_tasks": 20
+        },
+        "1": {
+          "jaccard_mean": 0.9803807246942492,
+          "kl_mean": 0.0018230856361582109,
+          "n_tasks": 20
+        },
+        "2": {
+          "jaccard_mean": 0.9559631453791939,
+          "kl_mean": 0.0019808279407364385,
+          "n_tasks": 20
+        },
+        "3": {
+          "jaccard_mean": 0.9477655132621079,
+          "kl_mean": 0.002718753147564386,
+          "n_tasks": 20
+        },
+        "4": {
+          "jaccard_mean": 0.9184899069514421,
+          "kl_mean": 0.002572527594701858,
+          "n_tasks": 20
+        },
+        "5": {
+          "jaccard_mean": 0.917889124997382,
+          "kl_mean": 0.0019339958983171257,
+          "n_tasks": 20
+        },
+        "6": {
+          "jaccard_mean": 0.9080454375159583,
+          "kl_mean": 0.0024394478462971643,
+          "n_tasks": 20
+        },
+        "7": {
+          "jaccard_mean": 0.9208695853663542,
+          "kl_mean": 0.003664095635452117,
+          "n_tasks": 20
+        },
+        "8": {
+          "jaccard_mean": 0.8964916809266337,
+          "kl_mean": 0.004562105109491369,
+          "n_tasks": 20
+        },
+        "9": {
+          "jaccard_mean": 0.9099363734792082,
+          "kl_mean": 0.006528473657693434,
+          "n_tasks": 20
+        },
+        "10": {
+          "jaccard_mean": 0.9219593932602264,
+          "kl_mean": 0.009720224455545084,
+          "n_tasks": 20
+        },
+        "11": {
+          "jaccard_mean": 0.9223964262785114,
+          "kl_mean": 0.01097866763792945,
+          "n_tasks": 20
+        },
+        "12": {
+          "jaccard_mean": 0.9145005651835237,
+          "kl_mean": 0.013390181395392484,
+          "n_tasks": 20
+        },
+        "13": {
+          "jaccard_mean": 0.9139687631600865,
+          "kl_mean": 0.013572910643521726,
+          "n_tasks": 20
+        },
+        "14": {
+          "jaccard_mean": 0.9246358936485428,
+          "kl_mean": 0.010593188977748039,
+          "n_tasks": 20
+        },
+        "15": {
+          "jaccard_mean": 0.914822740035552,
+          "kl_mean": 0.01708616767865192,
+          "n_tasks": 20
+        }
+      },
+      "overall_jaccard_mean": 0.9265016558195452,
+      "overall_kl_mean": 0.006808837373053345
+    }
+  },
+  "q2_prediction": {
+    "tim_domain": {
+      "per_layer": {
+        "0": {
+          "priming_to_generation_jaccard_mean": 0.8015373901962513,
+          "chance_baseline_jaccard_mean": 0.955723400637589,
+          "gap": -0.15418601044133773,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "1": {
+          "priming_to_generation_jaccard_mean": 0.928125,
+          "chance_baseline_jaccard_mean": 0.9859831029185868,
+          "gap": -0.05785810291858684,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "2": {
+          "priming_to_generation_jaccard_mean": 0.8235079045058884,
+          "chance_baseline_jaccard_mean": 0.9322299046465979,
+          "gap": -0.10872200014070954,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "3": {
+          "priming_to_generation_jaccard_mean": 0.7193010952748882,
+          "chance_baseline_jaccard_mean": 0.9087117594042677,
+          "gap": -0.18941066412937957,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "4": {
+          "priming_to_generation_jaccard_mean": 0.5370494361857218,
+          "chance_baseline_jaccard_mean": 0.8426645377801029,
+          "gap": -0.3056151015943811,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "5": {
+          "priming_to_generation_jaccard_mean": 0.6144855960812786,
+          "chance_baseline_jaccard_mean": 0.7846583745088265,
+          "gap": -0.17017277842754785,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "6": {
+          "priming_to_generation_jaccard_mean": 0.6198376869317068,
+          "chance_baseline_jaccard_mean": 0.8313601819940601,
+          "gap": -0.21152249506235332,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "7": {
+          "priming_to_generation_jaccard_mean": 0.5645228096203725,
+          "chance_baseline_jaccard_mean": 0.8127167292213568,
+          "gap": -0.24819391960098436,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "8": {
+          "priming_to_generation_jaccard_mean": 0.6250895599659203,
+          "chance_baseline_jaccard_mean": 0.8597916553050673,
+          "gap": -0.234702095339147,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "9": {
+          "priming_to_generation_jaccard_mean": 0.629075645129785,
+          "chance_baseline_jaccard_mean": 0.8221431703441343,
+          "gap": -0.19306752521434933,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "10": {
+          "priming_to_generation_jaccard_mean": 0.6728080162479632,
+          "chance_baseline_jaccard_mean": 0.8775743383812455,
+          "gap": -0.20476632213328239,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "11": {
+          "priming_to_generation_jaccard_mean": 0.6899190922834783,
+          "chance_baseline_jaccard_mean": 0.8332748434241883,
+          "gap": -0.14335575114071009,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "12": {
+          "priming_to_generation_jaccard_mean": 0.6928322065079211,
+          "chance_baseline_jaccard_mean": 0.8517150252896757,
+          "gap": -0.1588828187817546,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "13": {
+          "priming_to_generation_jaccard_mean": 0.6767522250083766,
+          "chance_baseline_jaccard_mean": 0.8256524143288019,
+          "gap": -0.14890018932042526,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "14": {
+          "priming_to_generation_jaccard_mean": 0.663114818024146,
+          "chance_baseline_jaccard_mean": 0.8584559106762903,
+          "gap": -0.1953410926521444,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "15": {
+          "priming_to_generation_jaccard_mean": 0.5970058818725332,
+          "chance_baseline_jaccard_mean": 0.8148183701023834,
+          "gap": -0.21781248822985022,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        }
+      },
+      "overall_priming_to_generation_jaccard_mean": 0.6784352727397645,
+      "overall_chance_baseline_jaccard_mean": 0.8623421074351985,
+      "overall_gap": -0.18390683469543398
+    },
+    "tim_random": {
+      "per_layer": {
+        "0": {
+          "priming_to_generation_jaccard_mean": 0.8800667242703533,
+          "chance_baseline_jaccard_mean": 0.9463894968299922,
+          "gap": -0.06632277255963892,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "1": {
+          "priming_to_generation_jaccard_mean": 0.9484375,
+          "chance_baseline_jaccard_mean": 0.9687769891302378,
+          "gap": -0.020339489130237753,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "2": {
+          "priming_to_generation_jaccard_mean": 0.871875,
+          "chance_baseline_jaccard_mean": 0.9104730879897907,
+          "gap": -0.0385980879897907,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "3": {
+          "priming_to_generation_jaccard_mean": 0.7722718253968254,
+          "chance_baseline_jaccard_mean": 0.8949847781933016,
+          "gap": -0.1227129527964762,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "4": {
+          "priming_to_generation_jaccard_mean": 0.7001468803711367,
+          "chance_baseline_jaccard_mean": 0.8204385182423652,
+          "gap": -0.12029163787122854,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "5": {
+          "priming_to_generation_jaccard_mean": 0.6213702958152487,
+          "chance_baseline_jaccard_mean": 0.774302848702644,
+          "gap": -0.15293255288739527,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "6": {
+          "priming_to_generation_jaccard_mean": 0.6138542508259757,
+          "chance_baseline_jaccard_mean": 0.8215116047061514,
+          "gap": -0.2076573538801757,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "7": {
+          "priming_to_generation_jaccard_mean": 0.5921914921174626,
+          "chance_baseline_jaccard_mean": 0.8184370320921592,
+          "gap": -0.22624553997469665,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "8": {
+          "priming_to_generation_jaccard_mean": 0.5948602244752133,
+          "chance_baseline_jaccard_mean": 0.8088538868329281,
+          "gap": -0.2139936623577149,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "9": {
+          "priming_to_generation_jaccard_mean": 0.6810543133605365,
+          "chance_baseline_jaccard_mean": 0.8035098584001285,
+          "gap": -0.122455545039592,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "10": {
+          "priming_to_generation_jaccard_mean": 0.73820725224764,
+          "chance_baseline_jaccard_mean": 0.8379312232379896,
+          "gap": -0.09972397099034969,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "11": {
+          "priming_to_generation_jaccard_mean": 0.7768748732427142,
+          "chance_baseline_jaccard_mean": 0.8077079189925661,
+          "gap": -0.030833045749851906,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "12": {
+          "priming_to_generation_jaccard_mean": 0.7191615225403816,
+          "chance_baseline_jaccard_mean": 0.8348914128926064,
+          "gap": -0.1157298903522248,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "13": {
+          "priming_to_generation_jaccard_mean": 0.7569625074657512,
+          "chance_baseline_jaccard_mean": 0.8083207704256342,
+          "gap": -0.051358262959882994,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "14": {
+          "priming_to_generation_jaccard_mean": 0.7337004212838297,
+          "chance_baseline_jaccard_mean": 0.8200359308950887,
+          "gap": -0.08633550961125902,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        },
+        "15": {
+          "priming_to_generation_jaccard_mean": 0.574411499641154,
+          "chance_baseline_jaccard_mean": 0.7998144169163129,
+          "gap": -0.22540291727515893,
+          "n_tasks": 20,
+          "n_task_pairs": 190
+        }
+      },
+      "overall_priming_to_generation_jaccard_mean": 0.7234654114408889,
+      "overall_chance_baseline_jaccard_mean": 0.8422737359049935,
+      "overall_gap": -0.11880832446410462
+    }
+  },
+  "verdicts": {
+    "q1_router_shift_detected": true,
+    "q1_content_specific": false,
+    "q2_gap_domain": -0.18390683469543398,
+    "q2_predictive_above_chance": false
+  }
+}

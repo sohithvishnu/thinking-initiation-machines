@@ -1,0 +1,414 @@
+{
+  "model_report": {
+    "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+    "architecture": "OlmoeForCausalLM",
+    "num_experts": 64,
+    "num_experts_per_tok": 8,
+    "num_hidden_layers": 16,
+    "hidden_size": 2048,
+    "moe_layer_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "n_moe_layers": 16,
+    "active_params_approx_B": 1.3,
+    "total_params_approx_B": 6.9,
+    "precision": "bf16",
+    "param_dtypes_loaded": [
+      "torch.bfloat16"
+    ],
+    "router_logits_extractable": true,
+    "router_logits_method": "forward_hook on model.model.layers[i].mlp.gate (OlmoeTopKRouter; forward returns (router_logits, router_scores, router_indices)) \u2014 not native output_router_logits=True, see module docstring for why"
+  },
+  "task_ids": [
+    "HumanEval/0",
+    "HumanEval/1",
+    "HumanEval/2",
+    "HumanEval/3",
+    "HumanEval/4",
+    "HumanEval/5",
+    "HumanEval/6",
+    "HumanEval/7",
+    "HumanEval/8",
+    "HumanEval/9",
+    "HumanEval/10",
+    "HumanEval/11",
+    "HumanEval/12",
+    "HumanEval/13",
+    "HumanEval/14",
+    "HumanEval/15",
+    "HumanEval/16",
+    "HumanEval/17",
+    "HumanEval/18",
+    "HumanEval/19"
+  ],
+  "top_k": 8,
+  "num_experts": 64,
+  "seed": 0,
+  "scores": {
+    "cold": {
+      "n": 20,
+      "pass@1_base": 0.3,
+      "pass@1_base_plus_extra": 0.3
+    },
+    "tim_unconstrained": {
+      "n": 20,
+      "pass@1_base": 0.35,
+      "pass@1_base_plus_extra": 0.3
+    },
+    "tim_locked": {
+      "n": 20,
+      "pass@1_base": 0.0,
+      "pass@1_base_plus_extra": 0.0
+    },
+    "cold_locked_random": {
+      "n": 20,
+      "pass@1_base": 0.0,
+      "pass@1_base_plus_extra": 0.0
+    }
+  },
+  "per_task": {
+    "cold": {
+      "HumanEval/0": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/1": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/2": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/3": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/4": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/5": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/6": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/7": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/8": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/9": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/10": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/11": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/12": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/13": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/14": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/15": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/16": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/17": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/18": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/19": {
+        "base_pass": false,
+        "plus_pass": false
+      }
+    },
+    "tim_unconstrained": {
+      "HumanEval/0": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/1": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/2": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/3": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/4": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/5": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/6": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/7": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/8": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/9": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/10": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/11": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/12": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/13": {
+        "base_pass": true,
+        "plus_pass": true
+      },
+      "HumanEval/14": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/15": {
+        "base_pass": true,
+        "plus_pass": false
+      },
+      "HumanEval/16": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/17": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/18": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/19": {
+        "base_pass": false,
+        "plus_pass": false
+      }
+    },
+    "tim_locked": {
+      "HumanEval/0": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/1": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/2": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/3": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/4": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/5": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/6": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/7": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/8": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/9": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/10": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/11": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/12": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/13": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/14": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/15": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/16": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/17": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/18": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/19": {
+        "base_pass": false,
+        "plus_pass": false
+      }
+    },
+    "cold_locked_random": {
+      "HumanEval/0": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/1": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/2": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/3": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/4": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/5": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/6": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/7": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/8": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/9": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/10": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/11": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/12": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/13": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/14": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/15": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/16": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/17": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/18": {
+        "base_pass": false,
+        "plus_pass": false
+      },
+      "HumanEval/19": {
+        "base_pass": false,
+        "plus_pass": false
+      }
+    }
+  }
+}
